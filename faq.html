@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Často kladené otázky - Bazarovyregal.sk | Odpovědi na všechny vaše otázky</title>
+  <meta name="description" content="Odpovědi na nejčastější otázky o kovových regálech, doručenie, montáži, záruce a reklamacích. Všechny informace o Bazarovyregal.sk a Vyprodej-regalu.cz.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            primary: { 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c', 800: '#9a3412', 900: '#7c2d12' },
+            danger: { 500: '#ef4444', 600: '#dc2626', 700: '#b91c1c' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .hero-gradient { background: linear-gradient(135deg, #1f2937 0%, #111827 50%, #0f172a 100%); }
+    .urgency-bar { background: linear-gradient(90deg, #dc2626, #ea580c, #dc2626); background-size: 200% 100%; animation: urgencyPulse 3s ease infinite; }
+    @keyframes urgencyPulse { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    .countdown-box { background: rgba(0,0,0,0.5); backdrop-filter: blur(10px); }
+    .accordion-button {
+      background: white;
+      border: 2px solid #e5e7eb;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .accordion-button:hover {
+      border-color: #f97316;
+      background: #fff7ed;
+    }
+    .accordion-button.active {
+      background: #fff7ed;
+      border-color: #f97316;
+      color: #f97316;
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .accordion-content.active {
+      max-height: 500px;
+    }
+    .accordion-icon {
+      display: inline-block;
+      transition: transform 0.3s;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+    .accordion-button.active .accordion-icon {
+      transform: rotate(180deg);
+    }
+    .shine { position: relative; overflow: hidden; }
+    .shine::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%); transform: rotate(30deg); animation: shine 3s infinite; }
+    @keyframes shine { 0% { transform: translateX(-100%) rotate(30deg); } 100% { transform: translateX(100%) rotate(30deg); } }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+<!-- URGENCY TOP BAR -->
+<div class="urgency-bar text-white text-center py-2 px-4 text-sm font-bold">
+  <span class="inline-flex items-center gap-2">
+    🔥 LIKVIDÁCIA SKLADU - Zľavy až 40% | Akcia končí za:
+    <span id="topCountdown" class="bg-black/30 px-2 py-0.5 rounded font-mono">2d 14:23:45</span>
+    | Doprava ZADARMO nad 79 €
+  </span>
+</div>
+
+<!-- HEADER -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between py-4">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center shadow-lg">
+          <span class="text-white text-2xl">🏭</span>
+        </div>
+        <div>
+          <div class="text-2xl font-black text-gray-900">Bazarovyregal<span class="text-primary-500">.sk</span></div>
+          <div class="text-xs text-red-600 font-bold uppercase tracking-wider">Likvidácia skladu</div>
+        </div>
+      </a>
+
+      <!-- Search -->
+      <div class="hidden lg:flex flex-1 max-w-xl mx-8">
+        <div class="relative w-full">
+          <input type="text" id="faqSearch" placeholder="Hľadať v FAQ..." class="w-full pl-5 pr-12 py-3 border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:ring-0 transition-colors">
+          <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary-500 text-xl">🔍</button>
+        </div>
+      </div>
+
+      <!-- Contact & Cart -->
+      <div class="flex items-center gap-6">
+        <a href="tel:+421123456789" class="hidden md:flex items-center gap-2 text-gray-600 hover:text-primary-500">
+          <span class="text-2xl">📞</span>
+          <div class="text-sm">
+            <div class="text-xs text-gray-400">Volajte</div>
+            <div class="font-bold">+421 123 456 789</div>
+          </div>
+        </a>
+        <button class="flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-5 py-3 rounded-xl font-bold transition-colors">
+          🛒 Košík <span class="bg-white text-primary-600 text-sm px-2 py-0.5 rounded-full">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex gap-1 pb-3 overflow-x-auto">
+      <a href="index.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">🏠 Úvod</a>
+      <a href="index.html#produkty" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">📦 Všetky regály</a>
+      <a href="#" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">🏡 Do domu</a>
+      <a href="#" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">🏭 Do skladu</a>
+      <a href="#" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">🔧 Do garáže</a>
+      <a href="#" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">⚙️ Konfigurátor</a>
+      <a href="#" class="px-4 py-2 text-sm font-medium text-primary-500 bg-primary-50 rounded-lg whitespace-nowrap flex items-center gap-1">
+        ❓ <span>FAQ</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero-gradient text-white relative overflow-hidden">
+  <!-- Background pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect fill=\"white\" width=\"2\" height=\"100\"/><rect fill=\"white\" width=\"100\" height=\"2\" y=\"49\"/></svg>'); background-size: 50px 50px;"></div>
+  </div>
+
+  <div class="container mx-auto px-4 py-12 lg:py-20 relative">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Left - Content -->
+      <div class="text-center lg:text-left">
+        <!-- Urgency Badge -->
+        <div class="inline-flex items-center gap-2 bg-red-500/20 border border-red-500/50 text-red-300 px-4 py-2 rounded-full text-sm font-bold mb-6">
+          <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+          MÁME ODPOVEDE NA VŠETKY VAŠE OTÁZKY
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight">
+          <span class="text-primary-400">Často kladené</span><br>
+          <span class="text-white">otázky</span>
+        </h1>
+
+        <p class="text-xl md:text-2xl font-medium text-gray-300 mb-8">
+          Všetko čo potrebujete vedieť o nákupe, doprave, montáži a záruke
+        </p>
+
+        <!-- Search Box -->
+        <div class="relative max-w-lg">
+          <input type="text" id="heroSearch" placeholder="Akú máte otázku?" class="w-full pl-6 pr-16 py-4 rounded-xl focus:ring-2 focus:ring-primary-400 focus:outline-none text-gray-900 font-medium">
+          <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-2xl">🔍</button>
+        </div>
+
+        <p class="text-gray-400 text-sm mt-4">Začnite písať kľúčové slovo alebo si vyberte kategóriu nižšie</p>
+      </div>
+
+      <!-- Right - Quick Stats -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center border border-white/20">
+          <div class="text-4xl font-black text-primary-300 mb-2">47</div>
+          <div class="text-sm font-medium text-gray-300">Najčastejších otázok</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center border border-white/20">
+          <div class="text-4xl font-black text-green-400 mb-2">24h</div>
+          <div class="text-sm font-medium text-gray-300">Odpoveď na e-mail</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center border border-white/20">
+          <div class="text-4xl font-black text-blue-300 mb-2">7 rokov</div>
+          <div class="text-sm font-medium text-gray-300">Záruka na regály</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center border border-white/20">
+          <div class="text-4xl font-black text-orange-300 mb-2">30 dní</div>
+          <div class="text-sm font-medium text-gray-300">Vrátenie tovaru</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave divider -->
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#f9fafb"/>
+    </svg>
+  </div>
+</section>
+
+<!-- CATEGORY BUTTONS -->
+<section class="py-12 bg-white border-b">
+  <div class="container mx-auto px-4">
+    <p class="text-center text-gray-600 font-medium mb-6">Vyberte kategóriu:</p>
+    <div class="flex flex-wrap gap-3 justify-center">
+      <button class="category-btn px-6 py-3 rounded-lg font-medium transition-all bg-primary-500 text-white" data-category="all">
+        🔍 Všetky otázky
+      </button>
+      <button class="category-btn px-6 py-3 rounded-lg font-medium transition-all bg-gray-100 text-gray-900" data-category="objednavka">
+        🛒 Objednávka a platba
+      </button>
+      <button class="category-btn px-6 py-3 rounded-lg font-medium transition-all bg-gray-100 text-gray-900" data-category="doprava">
+        🚚 Doprava
+      </button>
+      <button class="category-btn px-6 py-3 rounded-lg font-medium transition-all bg-gray-100 text-gray-900" data-category="produkty">
+        📦 Produkty
+      </button>
+      <button class="category-btn px-6 py-3 rounded-lg font-medium transition-all bg-gray-100 text-gray-900" data-category="montaz">
+        🔧 Montáž
+      </button>
+      <button class="category-btn px-6 py-3 rounded-lg font-medium transition-all bg-gray-100 text-gray-900" data-category="zaruka">
+        🛡️ Záruka a reklamácie
+      </button>
+      <button class="category-btn px-6 py-3 rounded-lg font-medium transition-all bg-gray-100 text-gray-900" data-category="o-nas">
+        ℹ️ O Bazarovyregal
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTIONS -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4 max-w-4xl">
+
+    <!-- OBJEDNÁVKA A PLATBA -->
+    <div class="faq-category mb-12" data-category="objednavka">
+      <h2 class="text-3xl font-black text-gray-900 mb-6 flex items-center gap-3">
+        <span class="text-4xl">🛒</span> Objednávka a platba
+      </h2>
+
+      <!-- Q1 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Ako objednať?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4">Objednávka je veľmi jednoduchá:</p>
+          <ol class="space-y-3 ml-5 list-decimal text-sm">
+            <li>Vyberte si regál na našom webe alebo na <strong>Vyprodej-regalu.cz</strong></li>
+            <li>Pridajte regál do košíka</li>
+            <li>Vyplňte doručovaciu adresu</li>
+            <li>Zvoľte spôsob platby (karta, prevod, dobierka)</li>
+            <li>Potvrďte objednávku</li>
+          </ol>
+          <p class="mt-4 text-sm text-primary-600 font-medium">Všetky nákupy prebiehajú na <a href="https://www.vyprodej-regalu.cz" class="underline">Vyprodej-regalu.cz</a>, čo je materská firma s rovnakým systémom a zárukami.</p>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Aké sú platobné možnosti?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4">Na Vyprodej-regalu.cz prijímame nasledujúce spôsoby platby:</p>
+          <ul class="space-y-3 ml-5 list-disc text-sm">
+            <li><strong>Platba kartou</strong> - okamžitá platba, najrýchlejšie spracovanie objednávky</li>
+            <li><strong>Prevod na účet</strong> - môžete zaplatiť prevodom z banky (ČSOB, Raiffeisenbank, atd.)</li>
+            <li><strong>Dobierka</strong> - zaplatíte pri doručenie tovaru, bez poplatku</li>
+          </ul>
+          <p class="mt-4 text-sm text-gray-600">Všetky metódy sú bezpečné a overené. Objednávka je uložená až po potvrdení platby.</p>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Môžem objednať na firmu?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4"><strong>Áno, úplne bez problémov!</strong></p>
+          <p>Pri objednávke si môžete vybrať ako zákazník:</p>
+          <ul class="space-y-2 ml-5 list-disc text-sm mt-3">
+            <li>Fyzickú osobu (meno a priezvisko)</li>
+            <li>Právnickú osobu (obchodný názov a IČO)</li>
+          </ul>
+          <p class="mt-4 text-sm">Ak objednávate na IČO, stačí to uviesť pri objednávke. Faktúra sa vygeneruje automaticky s vaším IČO a firemními údaji.</p>
+          <p class="mt-3 text-sm text-primary-600">💡 Tip: Obchodní partnery s vyššiam počtem objednávek si pozve oddělení obchodu na slevu!</p>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Je možné vyzdvihnúť osobne?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4"><strong>Áno, ale iba v Praze po predchádzajúcej dohode.</strong></p>
+          <p>Máme sklad v Praze, kde si môžete tovar vyzdvihnúť osobne. Týmto spôsobom ušetríte na doprave.</p>
+          <ul class="space-y-2 ml-5 list-disc text-sm mt-3">
+            <li>Vyzvednout si môžete jen objednávky z Prahy a okolí</li>
+            <li>Vyzdvihnutie je bezplatné</li>
+            <li>Dohodnite sa s nami telefonicky: <strong>+421 123 456 789</strong></li>
+            <li>Vyzdvihnutie je možné Po-Pi 8:00-16:00</li>
+          </ul>
+          <p class="mt-4 text-sm bg-blue-50 text-blue-700 p-3 rounded">ℹ️ Objednejte si, vyberte možnost vyzvednutí v Praze a ihneď si to môžete vyzvednout!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOPRAVA -->
+    <div class="faq-category mb-12" data-category="doprava">
+      <h2 class="text-3xl font-black text-gray-900 mb-6 flex items-center gap-3">
+        <span class="text-4xl">🚚</span> Doprava
+      </h2>
+
+      <!-- Q1 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Koľko stojí doprava?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4">Cena dopravy je na základe hmotnosti a vzdialenosti:</p>
+          <ul class="space-y-2 ml-5 list-disc text-sm mt-3">
+            <li><strong>Základná sadzba: 3,99 €</strong> - v túto cenu máte zahrnuté regály do ~30 kg (obvyklý regál)</li>
+            <li><strong>Ťažšie regály</strong> - cena sa vypočíta podľa hmotnosti pri objednávke</li>
+            <li><strong>Doprava ZDARMA</strong> - pre objednávky nad 79 €</li>
+          </ul>
+          <p class="mt-4 text-sm bg-green-50 text-green-700 p-3 rounded">✓ Najčastejšie vás stojí doprava iba 3,99 €! A ak nakupujete viac regálov, doprava je obvykle zadarmo.</p>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Ako dlho trvá doručenie?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4">Naše doručovacie časy:</p>
+          <ul class="space-y-2 ml-5 list-disc text-sm mt-3">
+            <li><strong>Expedičná lehota:</strong> Do 24 hodín od potvrzení objednávky</li>
+            <li><strong>Doručenie:</strong> 2-3 pracovní dni (Po-Pi)</li>
+            <li><strong>Sledovanie:</strong> Dostanete SMS s číslom balíka a odhadom doručenia</li>
+          </ul>
+          <p class="mt-4 text-sm text-gray-600">Přesný čas doručenie vám potvrdí přepravce 24 hodín pred doručeniem SMS.</p>
+          <p class="mt-3 text-sm text-orange-700 bg-orange-50 p-3 rounded">⚡ Objednáte-li do 14:00, objednávka sa expeduje do konca dňa!</p>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Kam doručujete?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4"><strong>Doručujeme do celého Slovenska (SR).</strong></p>
+          <ul class="space-y-2 ml-5 list-disc text-sm mt-3">
+            <li>Bratislava a okolí - výber konkrétneho času</li>
+            <li>Ostatné časti SR - doručenie v pracovní dni</li>
+            <li>Na adresu domu, kancelárie alebo skladu</li>
+            <li>Tiež do horských oblastí (nad 500 m nadmorskej výšky)</li>
+          </ul>
+          <p class="mt-4 text-sm">Doručujeme cez overených prepravcov (Slovenská pošta, GLS, DPD atd.), ktoré máme dlhodobo zmluvne zabezpečené.</p>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Doručíte aj na Slovensko?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4"><strong>Áno! Máme špeciálny web pre slovenských zákazníkov.</strong></p>
+          <p>V Česku objednávajte na:</p>
+          <p class="text-lg font-bold text-primary-600 mt-3 mb-3">
+            <a href="https://www.bazarovyregal.sk" class="underline hover:text-primary-700">Bazarovyregal.sk</a>
+          </p>
+          <ul class="space-y-2 ml-5 list-disc text-sm">
+            <li>Stejné produkty a ceny jako v SR (v SKK)</li>
+            <li>Česká podpora a fakturácia</li>
+            <li>Doručenie po celém Slovensku</li>
+            <li>Záruka 7 rokov platí i na Slovensku</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUKTY -->
+    <div class="faq-category mb-12" data-category="produkty">
+      <h2 class="text-3xl font-black text-gray-900 mb-6 flex items-center gap-3">
+        <span class="text-4xl">📦</span> Produkty
+      </h2>
+
+      <!-- Q1 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Sú regály nové?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4"><strong>Áno, 100% nové a nerozbalené!</strong></p>
+          <p>Všetky regály, které prodáváme, jsou:</p>
+          <ul class="space-y-2 ml-5 list-disc text-sm mt-3">
+            <li>Úplne nové, nikdy predtým nepredané</li>
+            <li>V originálnom balení od výrobcu</li>
+            <li>Bez poškodenia a defektov</li>
+            <li>So všetkými súčasťami a návodom v slovenčine</li>
+          </ul>
+          <p class="mt-4 text-sm text-gray-600">Regály pocházejí z likvidácia skladu, takže ceny sú nižšie ako bežný obchod, ale kvalita je rovnako vysoká!</p>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Jaká je nosnosť regálov?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4">Nosnosť se liší podle typu regálu:</p>
+          <div class="mt-4 space-y-3 text-sm">
+            <div class="bg-blue-50 p-3 rounded">
+              <strong class="text-blue-900">Regály do domu (4-policové):</strong> 700 kg nosnosťi (175 kg na jednu policu)
+            </div>
+            <div class="bg-green-50 p-3 rounded">
+              <strong class="text-green-900">Regály do garáže (4-5 policový):</strong> 700-875 kg nosnosťi
+            </div>
+            <div class="bg-orange-50 p-3 rounded">
+              <strong class="text-orange-900">Profesionálne regály:</strong> 1000-1200 kg nosnosťi
+            </div>
+          </div>
+          <p class="mt-4 text-sm text-gray-600">Přesná nosnosť je vždy uvedena v popisu produktu. Nosnosť je stanovena pro rovnoměrně rozloženou váhu.</p>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Z čoho sú regály vyrobené?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4">Naše regály soe vyrábějí ze dvou základních materiálů:</p>
+          <div class="mt-4 space-y-4 text-sm">
+            <div>
+              <h4 class="font-bold text-gray-900 mb-2">🔩 Oceľové regály (základný materiál)</h4>
+              <p>Všetky regály mají ocelové nosné sloupy, čím sú extrémne pevné a odolné.</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-2">🎨 Lakované regály</h4>
+              <p>Oceľový rám je prepieskovavaný a pokrytý kvalitnou farbou v čiernej, bielej, červenej alebo modrej farbe. Vhodné do interiérov.</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-2">⚡ Zinkované regály</h4>
+              <p>Oceľový rám je pokrytý zinkovou vrstvou metódou horúceho zinkovania. Odolný voči vlhkosti a korózii. Ideálne do garáží a na záhrady.</p>
+            </div>
+          </div>
+          <p class="mt-4 text-sm text-gray-600">Všechny typy mají stejnou nosnosť a životnost. Výber závisí na použití a vzhľade.</p>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Dá sa nastaviť výška políc?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4"><strong>Áno, výška políc je nastaviteľná!</strong></p>
+          <ul class="space-y-2 ml-5 list-disc text-sm mt-3">
+            <li><strong>Krok nastavenia:</strong> Po 3,5 cm</li>
+            <li><strong>Nastavenie:</strong> Jednoduché vybraťie a presunutie police</li>
+            <li><strong>Bez náradia:</strong> Nemusíte nič rozoberať alebo montovať</li>
+            <li><strong>Počet pozícií:</strong> Typicky 5-6 pozícií na výšku</li>
+          </ul>
+          <p class="mt-4 text-sm text-gray-600">Vďaka tomu si môžete prispôsobiť regál presne podľa toho, čo máte skladovať. Môžete si vytvoriť napr. 3 vysoké medzery a 1 nízku.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MONTÁŽ -->
+    <div class="faq-category mb-12" data-category="montaz">
+      <h2 class="text-3xl font-black text-gray-900 mb-6 flex items-center gap-3">
+        <span class="text-4xl">🔧</span> Montáž
+      </h2>
+
+      <!-- Q1 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Je montáž zložitá?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4"><strong>Nie! Montáž je veľmi jednoduchá a trvá len 10 minút.</strong></p>
+          <p>Naše regály majú špeciálny systém bez skrutiek (bezskrutkový):</p>
+          <ul class="space-y-3 ml-5 list-disc text-sm mt-3">
+            <li><strong>Bez vŕtania a skrutkovania:</strong> Police jednoducho vsunúte do stĺpov</li>
+            <li><strong>Bez elektrického náradia:</strong> Nemusíte nič vŕtať, elektriny, vŕtačky</li>
+            <li><strong>Bez pomoci:</strong> Zvládnete to sami, nie je potrebná druhá osoba</li>
+            <li><strong>Čas:</strong> Typicky 10 minút pre 4-policový regál</li>
+          </ul>
+          <p class="mt-4 text-sm text-green-700 bg-green-50 p-3 rounded">✓ Skutočne to zvládne aj dieťa! Tisíce našich zákazníkov montáž zvládli bez problému.</p>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Potrebujem náradie?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4"><strong>Nie, stačí vám gumová palička!</strong></p>
+          <p>Na montáž regálu potrebujete:</p>
+          <ul class="space-y-2 ml-5 list-disc text-sm mt-3">
+            <li><strong>Gumová palička</strong> - aby ste policu ľahšie zasunuli do stĺpov</li>
+            <li><strong>Nič viac!</strong> - bez vŕtačky, bez bitov, bez skrutkovača</li>
+          </ul>
+          <p class="mt-4 text-sm">Gumová palička sa obvykle nedodáva s regálom, ale máte ju určite doma. Ak ne, stojí cca 3,99 € v každém hobbymarkt.</p>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Je k dispozícii návod?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4"><strong>Áno! Návod je v balení a tiež online.</strong></p>
+          <ul class="space-y-3 ml-5 list-disc text-sm mt-3">
+            <li><strong>V balení:</strong> Tlačený návod v slovenčine krok za krokom</li>
+            <li><strong>Obrázky:</strong> Farebné, zrozumiteľné ilustrácie</li>
+            <li><strong>Online video:</strong> YouTube návod s postupom montáže</li>
+            <li><strong>Podpora:</strong> Ak by ste mali otázku, napíšte nám na <a href="mailto:info@bazarovyregal.sk" class="text-primary-600 underline">info@bazarovyregal.sk</a></li>
+          </ul>
+          <p class="mt-4 text-sm bg-blue-50 text-blue-700 p-3 rounded">ℹ️ Návod je tak jednoduchý, že sa ani nemusíte pozerať na video. Ale je tam, ak ho budete potrebovať!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ZÁRUKA A REKLAMACE -->
+    <div class="faq-category mb-12" data-category="zaruka">
+      <h2 class="text-3xl font-black text-gray-900 mb-6 flex items-center gap-3">
+        <span class="text-4xl">🛡️</span> Záruka a reklamácie
+      </h2>
+
+      <!-- Q1 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Aká je záruka?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4"><strong>7 rokov záruka na všechny regály!</strong></p>
+          <p>Záruka pokrýva:</p>
+          <ul class="space-y-2 ml-5 list-disc text-sm mt-3">
+            <li>Rozbitý alebo deformovaný oceľový rám</li>
+            <li>Prasknuté alebo zlomené police</li>
+            <li>Opotrebované alebo hrdzavé časti</li>
+            <li>Akékoľvek výrobné chyby</li>
+          </ul>
+          <p class="mt-4 text-sm">Záruka sa vzťahuje na normálne používanie. Ak regál používate preťažený (víc než je uvedena nosnosť), záruka se vztahuje na nižšia nosnosť.</p>
+          <p class="mt-3 text-sm text-primary-600 font-medium">⭐ 7 rokov je jednou z nejdelších záruk na trhu!</p>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Čo ak mi regál nevyhovuje?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4"><strong>Máte 30 dní na vrátenie bez udání důvodu!</strong></p>
+          <ul class="space-y-2 ml-5 list-disc text-sm mt-3">
+            <li>Ak sa vám regál nepáči, vrátite ho do 30 dní</li>
+            <li>Vrátenie je <strong>bezplatné</strong> (my zaplatíme dopravu)</li>
+            <li>Peniaze vám vrátime do 14 dní</li>
+            <li>Regál sa musí vrátiť v pôvodnom stave (v krabici, nepoškodený)</li>
+          </ul>
+          <p class="mt-4 text-sm text-gray-600">Nie je potrebné udávať dôvod. Ak sa vám nepáči farba, veľkosť alebo čokoľvek iné - vrátite to!</p>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Ako reklamovať?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4">Máte problém s regálom? Postup reklamácie:</p>
+          <ol class="space-y-3 ml-5 list-decimal text-sm mt-3">
+            <li>
+              <strong>Napíšte nám e-mail:</strong>
+              <a href="mailto:info@bazarovyregal.sk" class="text-primary-600 underline">info@bazarovyregal.sk</a>
+            </li>
+            <li><strong>Popíšte problém</strong> a priložte fotografie</li>
+            <li><strong>Číslo objednávky</strong> (nájdete v e-maile od nás)</li>
+            <li><strong>Čakanie na odpoveď:</strong> Odpoveď do 48 hodín</li>
+            <li><strong>Riešenie:</strong> Buď náhrada, vrátenie peňazí, alebo oprava</li>
+          </ol>
+          <p class="mt-4 text-sm">Kontakt pre reklamácie:</p>
+          <div class="bg-gray-100 p-3 rounded mt-2 text-sm">
+            📧 <a href="mailto:info@bazarovyregal.sk" class="text-primary-600 underline">info@bazarovyregal.sk</a><br>
+            📞 +421 123 456 789
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- O BAZAROVYREGAL.CZ -->
+    <div class="faq-category mb-12" data-category="o-nas">
+      <h2 class="text-3xl font-black text-gray-900 mb-6 flex items-center gap-3">
+        <span class="text-4xl">ℹ️</span> O Bazarovyregal.sk
+      </h2>
+
+      <!-- Q1 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Kto ste?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4"><strong>Bazarovyregal.sk</strong> je <strong>prezentačný web</strong> pre nákupnú platformu <a href="https://www.vyprodej-regalu.cz" class="text-primary-600 underline font-medium">Vyprodej-regalu.cz</a>.</p>
+          <p class="mt-4">Štruktúra:</p>
+          <ul class="space-y-2 ml-5 list-disc text-sm mt-3">
+            <li><strong>Vyprodej-regalu.cz</strong> - materská firma a hlavný e-shop</li>
+            <li><strong>Bazarovyregal.sk</strong> - prezentačný web s lepším UX</li>
+            <li><strong>Bazarovyregal.sk</strong> - verzia pre slovenských zákazníkov</li>
+          </ul>
+          <p class="mt-4 text-sm text-gray-600">Všetky weby sú spravované rovnakým tímom. Sú úplne rovnaké záruky, ceny a služby.</p>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Prečo sú ceny tak nízke?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4"><strong>Ceny jsou nízké, pretože probíhá likvidácia skladu!</strong></p>
+          <p>Dôvody nižšiach cien:</p>
+          <ul class="space-y-2 ml-5 list-disc text-sm mt-3">
+            <li>Máme <strong>veľké prebytky zásob</strong> - regálov je viac ako potreba</li>
+            <li>Nákupy sa nám <strong>hromadili v sklade</strong> - máme na ne miesto</li>
+            <li><strong>Likvidace je nutná</strong> - musíme tovar čo najrýchlejšie predať</li>
+            <li>Marža je <strong>nižšia</strong> - počítame na objem predaja, nie na vysoký zisk</li>
+          </ul>
+          <p class="mt-4 text-sm text-gray-600">Nejedná sa o lacné regály. Je to rovnaká kvalita a rovnaký výrobca ako normálne, ale bez nadhodnotenia zo strany bežného obchodu.</p>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="faq-item bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
+        <button class="accordion-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-gray-900 hover:bg-primary-50">
+          <span>Sú zľavy skutočné?</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content bg-gray-50 px-6 py-5 text-gray-700">
+          <p class="mb-4"><strong>Áno, všetky zľavy sú 100% skutočné!</strong></p>
+          <p class="mt-4">Percento zľavy je vždy vypočítané:</p>
+          <ul class="space-y-2 ml-5 list-disc text-sm mt-3">
+            <li>Oproti <strong>originálnej cene od výrobcu</strong></li>
+            <li>Alebo oproti <strong>štandardnej cene v bežnom obchode</strong></li>
+            <li><strong>Nikdy</strong> si nenavyšujeme cenu a potom ju nezľavujeme</li>
+          </ul>
+          <p class="mt-4 text-sm text-orange-700 bg-orange-50 p-3 rounded">⚠️ Zľavy sú skutočné, ale počty kusov sú obmedzené. Keď sa skončia, tak sa skončia!</p>
+          <p class="mt-3 text-sm text-gray-600">Máme přes 10 000 ks skladom, ale to není neomezeno. Objednávajte včas!</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="py-16 bg-gradient-to-r from-primary-500 to-primary-600">
+  <div class="container mx-auto px-4">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl font-black text-white mb-4">Stále máte otázku?</h2>
+      <p class="text-primary-100 mb-8">Neváhejte nás kontaktovat! Náš tím vám odpověď během 24 hodín.</p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+421123456789" class="shine bg-white text-primary-600 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:bg-gray-100 inline-flex items-center justify-center gap-2">
+          📞 Zavolať +421 123 456 789
+        </a>
+        <a href="mailto:info@bazarovyregal.sk" class="bg-white/20 hover:bg-white/30 border border-white text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors inline-flex items-center justify-center gap-2">
+          ✉️ Napísať e-mail
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl font-black text-gray-900 mb-4">Získajte zľavu 10% navyše!</h2>
+      <p class="text-gray-600 mb-8">Prihláste sa na odber noviniek a získajte zľavový kód na prvú objednávku.</p>
+
+      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="email" placeholder="Váš e-mail" class="flex-1 px-5 py-4 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:ring-0">
+        <button type="submit" class="bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-xl font-bold transition-colors whitespace-nowrap">
+          Chcem zľavu →
+        </button>
+      </form>
+
+      <p class="text-gray-500 text-sm mt-4">Žiadny spam. Odhlásiť sa môžete kedykoľvek.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white py-16">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <!-- About -->
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">🏭</div>
+          <div class="text-xl font-bold">Bazarovyregal<span class="text-primary-500">.sk</span></div>
+        </div>
+        <p class="text-gray-400 text-sm mb-4">
+          Likvidácia skladu kovových regálov. Iba nové a nerozbalené tovar so zárukou 7 rokov.
+        </p>
+        <div class="flex gap-3">
+          <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors">📘</a>
+          <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors">📸</a>
+          <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors">▶️</a>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div>
+        <h4 class="font-bold text-lg mb-4">Kategórie</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#" class="hover:text-primary-400 transition-colors">Regály do domu</a></li>
+          <li><a href="#" class="hover:text-primary-400 transition-colors">Regály do skladu</a></li>
+          <li><a href="#" class="hover:text-primary-400 transition-colors">Regály do garáže</a></li>
+          <li><a href="#" class="hover:text-primary-400 transition-colors">Regály do kancelárie</a></li>
+          <li><a href="#" class="hover:text-primary-400 transition-colors">Profesionálne regály</a></li>
+        </ul>
+      </div>
+
+      <!-- Info -->
+      <div>
+        <h4 class="font-bold text-lg mb-4">Informácie</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#" class="hover:text-primary-400 transition-colors">O nás</a></li>
+          <li><a href="faq.html" class="hover:text-primary-400 transition-colors text-primary-400">Často kladené otázky</a></li>
+          <li><a href="#" class="hover:text-primary-400 transition-colors">Doprava a platba</a></li>
+          <li><a href="#" class="hover:text-primary-400 transition-colors">Obchodné podmienky</a></li>
+          <li><a href="#" class="hover:text-primary-400 transition-colors">Ochrana osobných údajov</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-bold text-lg mb-4">Kontakt</h4>
+        <ul class="space-y-3 text-gray-400">
+          <li class="flex items-center gap-3">
+            <span class="text-xl">📞</span>
+            <a href="tel:+421123456789" class="hover:text-primary-400">+421 123 456 789</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-xl">✉️</span>
+            <a href="mailto:info@bazarovyregal.sk" class="hover:text-primary-400">info@bazarovyregal.sk</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-xl">🕐</span>
+            <span>Po-Pi 8:00 - 16:00</span>
+          </li>
+        </ul>
+
+        <!-- Payment icons -->
+        <div class="mt-6">
+          <div class="text-sm text-gray-500 mb-2">Platobné metódy:</div>
+          <div class="flex gap-2">
+            <div class="bg-gray-800 rounded px-3 py-1 text-xs">💳 Karta</div>
+            <div class="bg-gray-800 rounded px-3 py-1 text-xs">🏦 Prevod</div>
+            <div class="bg-gray-800 rounded px-3 py-1 text-xs">📦 Dobierka</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-gray-800 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
+        <div>© 2026 Bazarovyregal.sk - Všetky práva vyhradené</div>
+        <div class="flex items-center gap-2">
+          <span>Nákup prebieha na</span>
+          <a href="https://www.vyprodej-regalu.cz" class="text-primary-400 hover:underline" target="_blank">Vyprodej-regalu.cz</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Countdown Timer
+function updateCountdown() {
+  const stored = localStorage.getItem('countdownEnd');
+  let endTime;
+
+  if (stored) {
+    endTime = parseInt(stored);
+  } else {
+    const now = new Date();
+    endTime = new Date(now.getTime() + (2 * 24 + 14) * 60 * 60 * 1000 + 23 * 60 * 1000 + 45 * 1000).getTime();
+    localStorage.setItem('countdownEnd', endTime);
+  }
+
+  function tick() {
+    const now = Date.now();
+    const diff = endTime - now;
+
+    if (diff <= 0) {
+      endTime = Date.now() + (2 * 24 + 14) * 60 * 60 * 1000;
+      localStorage.setItem('countdownEnd', endTime);
+      return tick();
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('topCountdown').textContent = `${days}d ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  }
+
+  tick();
+  setInterval(tick, 1000);
+}
+
+// Accordion functionality
+function initAccordions() {
+  const buttons = document.querySelectorAll('.accordion-button');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      const content = this.nextElementSibling;
+      const isActive = content.classList.contains('active');
+
+      const siblings = this.parentElement.parentElement.querySelectorAll('.accordion-content.active');
+      siblings.forEach(el => {
+        if (el !== content) {
+          el.classList.remove('active');
+          el.previousElementSibling.classList.remove('active');
+        }
+      });
+
+      if (isActive) {
+        content.classList.remove('active');
+        this.classList.remove('active');
+      } else {
+        content.classList.add('active');
+        this.classList.add('active');
+      }
+    });
+  });
+}
+
+// Search functionality
+function initSearch() {
+  const searchInputs = document.querySelectorAll('#faqSearch, #heroSearch');
+
+  searchInputs.forEach(input => {
+    input.addEventListener('input', function(e) {
+      const query = e.target.value.toLowerCase().trim();
+      const items = document.querySelectorAll('.faq-item');
+
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (query === '' || text.includes(query)) {
+          item.style.display = '';
+          item.classList.add('fade-in');
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      const categories = document.querySelectorAll('.faq-category');
+      categories.forEach(category => {
+        const visibleItems = category.querySelectorAll('.faq-item:not([style*="display: none"])');
+        category.style.display = visibleItems.length > 0 ? '' : 'none';
+      });
+    });
+  });
+}
+
+// Category filter functionality
+function initCategoryFilters() {
+  const buttons = document.querySelectorAll('.category-btn');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      buttons.forEach(b => {
+        b.classList.remove('bg-primary-500', 'text-white');
+        b.classList.add('bg-gray-100', 'text-gray-900');
+      });
+      this.classList.remove('bg-gray-100', 'text-gray-900');
+      this.classList.add('bg-primary-500', 'text-white');
+
+      const selectedCategory = this.dataset.category;
+      const categories = document.querySelectorAll('.faq-category');
+
+      categories.forEach(category => {
+        if (selectedCategory === 'all' || category.dataset.category === selectedCategory) {
+          category.style.display = '';
+          category.classList.add('fade-in');
+        } else {
+          category.style.display = 'none';
+        }
+      });
+
+      document.querySelectorAll('#faqSearch, #heroSearch').forEach(input => {
+        input.value = '';
+      });
+    });
+  });
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+  updateCountdown();
+  initAccordions();
+  initSearch();
+  initCategoryFilters();
+});
+
+// Add fade-in animation
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+`;
+document.head.appendChild(style);
+</script>
+
+</body>
+</html>

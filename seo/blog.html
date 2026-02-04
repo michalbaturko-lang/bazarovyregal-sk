@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://vyprodej-regalucz.s26.cdn-upgates.com">
+
+  <meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="canonical" href="https://www.bazarovyregal.sk/blog.html">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog o regálech a skladování | Bazarovyregal.sk</title>
+  <meta name="description" content="Rady, tipy a návody jak vybrať správný regál. Články o skladování v garáži, sklepě, dílně i domácnosti. Odborné recenze a srovnání regálov.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            primary: { 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c', 800: '#9a3412', 900: '#7c2d12' },
+            danger: { 500: '#ef4444', 600: '#dc2626', 700: '#b91c1c' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .article-card { transition: all 0.3s; }
+    .article-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+  </style>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Blog o regálech a skladování",
+  "description": "Rady, tipy a návody jak vybrať správný regál. Články o skladování v garáži, sklepě, dílně i domácnosti. Odborné recenze a srovnání regálov.",
+  "author": {
+    "@type": "Organization",
+    "name": "Bazarovyregal.sk",
+    "url": "https://bazarovyregal.sk"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bazarovyregal.sk",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.bazarovyregal.sk/logo.png"
+    }
+  },
+  "datePublished": "2026-01-15",
+  "dateModified": "2026-01-31",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.bazarovyregal.sk/blog.html"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Úvod",
+      "item": "https://www.bazarovyregal.sk/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Články",
+      "item": "https://www.bazarovyregal.sk/clanky/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Blog o regálech a skladování",
+      "item": "https://www.bazarovyregal.sk/blog.html"
+    }
+  ]
+}
+  </script>
+  <link rel="preconnect" href="https://vyprodej-regalucz.s26.cdn-upgates.com">
+  <meta name="theme-color" content="#f97316">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Domů", "item": "https://www.bazarovyregal.sk/index.html"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.bazarovyregal.sk/blog.html"}]}</script>
+</head>
+<body class="bg-gray-50 font-sans">
+
+<!-- HEADER -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center shadow-lg">
+          <span class="text-white text-2xl">🏭</span>
+        </div>
+        <div>
+          <div class="text-2xl font-black text-gray-900">Bazarovyregal<span class="text-primary-500">.sk</span></div>
+          <div class="text-xs text-red-600 font-bold uppercase tracking-wider">Likvidácia skladu</div>
+        </div>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="katalog.html" class="hidden md:flex items-center gap-2 text-gray-600 hover:text-primary-500 font-medium">📦 Katalog</a>
+        <a href="katalog.html" class="flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-5 py-3 rounded-xl font-bold transition-colors">
+          🛒 Nakúpiť
+        </a>
+      </div>
+    </div>
+    <nav class="flex gap-1 pb-3 overflow-x-auto">
+      <a href="index.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap">🏠 Úvod</a>
+      <a href="katalog.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">📦 Všetky regály</a>
+      <a href="blog.html" class="px-4 py-2 text-sm font-medium text-primary-500 bg-primary-50 rounded-lg whitespace-nowrap">📝 Blog</a>
+      <a href="slovnik.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">📖 Slovník pojmů</a>
+      <a href="o-nas.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">ℹ️ O nás</a>
+      <a href="faq.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">❓ FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Breadcrumbs Navigation -->
+<nav aria-label="Breadcrumb" class="bg-gray-100 py-3 px-4">
+  <div class="container mx-auto">
+    <ol class="flex items-center text-sm">
+      <a href="index.html" class="text-primary-500 hover:text-primary-600 hover:underline">Domů</a> <span class="text-gray-400 mx-2">›</span> <span class="text-gray-500">Blog</span>
+    </ol>
+  </div>
+</nav>
+
+
+<!-- BREADCRUMB -->
+<div class="bg-white border-b">
+  <div class="container mx-auto px-4 py-3">
+    <nav class="text-sm text-gray-500">
+      <a href="index.html" class="hover:text-primary-500">Úvod</a>
+      <span class="mx-2">›</span>
+      <span class="text-gray-900 font-medium">Blog</span>
+    </nav>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="container mx-auto px-4 py-12">
+
+  <!-- Header -->
+  <div class="text-center mb-12">
+    <h1 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">Blog o regálech</h1>
+    <p class="text-xl text-gray-600 max-w-2xl mx-auto">Rady, tipy a návody jak vybrať správný regál do garáže, sklepa, dílny alebo domácnosti. Odborné články od specialistů.</p>
+  </div>
+
+  <!-- Featured Article -->
+  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-8 md:p-12 mb-12 text-white">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <span class="inline-block bg-white/20 text-white text-sm font-bold px-3 py-1 rounded-full mb-4">📌 Doporučený článek</span>
+        <h2 class="text-3xl md:text-4xl font-black mb-4">Jak vybrať regál do garáže: Kompletní průvodce 2025</h2>
+        <p class="text-primary-100 mb-6">Garáž není jen místo pro auto. Správným regálovým systémem z ní uděláte organizovaný sklad nářadí, pneumatik i sezónních věcí. Přečtěte si, na co se zaměřit.</p>
+        <a href="jak-vybrať-regal-do-garaze.html" class="inline-flex items-center gap-2 bg-white text-primary-600 px-6 py-3 rounded-xl font-bold hover:bg-primary-50 transition-colors">
+          Přečíst článek →
+        </a>
+      </div>
+      <div class="hidden md:block">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop" loading="lazy" alt="Regál v garáži" class="rounded-2xl shadow-2xl">
+      </div>
+    </div>
+  </div>
+
+  <!-- Article Categories -->
+  <div class="flex flex-wrap gap-3 mb-8">
+    <button class="px-4 py-2 bg-primary-500 text-white rounded-full font-medium">Všechny články</button>
+    <button class="px-4 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-primary-50 border">Návody</button>
+    <button class="px-4 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-primary-50 border">Garáž</button>
+    <button class="px-4 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-primary-50 border">Pivnica</button>
+    <button class="px-4 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-primary-50 border">Dielňa</button>
+    <button class="px-4 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-primary-50 border">Tipy</button>
+  </div>
+
+  <!-- Articles Grid -->
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- Article 1 -->
+    <article class="article-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+      <a href="jak-vybrať-regal-do-garaze.html">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop" loading="lazy" alt="Regál do garáže" class="w-full h-48 object-cover">
+      </a>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">Návod</span>
+          <span class="text-gray-400 text-sm">10 min čtení</span>
+        </div>
+        <a href="jak-vybrať-regal-do-garaze.html">
+          <h3 class="text-xl font-bold text-gray-900 mb-2 hover:text-primary-500 transition-colors">Jak vybrať regál do garáže: Kompletní průvodce</h3>
+        </a>
+        <p class="text-gray-600 mb-4">Na co myslet při výběru regálu do garáže? Nosnosť, rozměry, materiál a další důležité parametry.</p>
+        <a href="jak-vybrať-regal-do-garaze.html" class="text-primary-500 font-medium hover:text-primary-600">Číst více →</a>
+      </div>
+    </article>
+
+    <!-- Article 2 -->
+    <article class="article-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+      <a href="regaly-do-sklepa.html">
+        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=400&h=250&fit=crop" loading="lazy" alt="Regál do sklepa" class="w-full h-48 object-cover">
+      </a>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">Tipy</span>
+          <span class="text-gray-400 text-sm">8 min čtení</span>
+        </div>
+        <a href="regaly-do-sklepa.html">
+          <h3 class="text-xl font-bold text-gray-900 mb-2 hover:text-primary-500 transition-colors">Regály do sklepa: Co funguje a co ne</h3>
+        </a>
+        <p class="text-gray-600 mb-4">Vlhkost, teplota, nosnosť - jaký regál vydrží ve sklepě? Pozinkované vs. lakované regály.</p>
+        <a href="regaly-do-sklepa.html" class="text-primary-500 font-medium hover:text-primary-600">Číst více →</a>
+      </div>
+    </article>
+
+    <!-- Article 3 -->
+    <article class="article-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+      <a href="nosnosť-regalu.html">
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=250&fit=crop" loading="lazy" alt="Nosnosť regálu" class="w-full h-48 object-cover">
+      </a>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-1 rounded">Odborný</span>
+          <span class="text-gray-400 text-sm">6 min čtení</span>
+        </div>
+        <a href="nosnosť-regalu.html">
+          <h3 class="text-xl font-bold text-gray-900 mb-2 hover:text-primary-500 transition-colors">Nosnosť regálu: Jak ji správně pochopit</h3>
+        </a>
+        <p class="text-gray-600 mb-4">Nosnosť police vs. celková nosnosť regálu. Co znamenají údaje v katalogu a jak je interpretovat.</p>
+        <a href="nosnosť-regalu.html" class="text-primary-500 font-medium hover:text-primary-600">Číst více →</a>
+      </div>
+    </article>
+
+    <!-- Article 4 -->
+    <article class="article-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+      <a href="organizace-naradi.html">
+        <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=400&h=250&fit=crop" loading="lazy" alt="Organizace nářadí" class="w-full h-48 object-cover">
+      </a>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="bg-orange-100 text-orange-700 text-xs font-bold px-2 py-1 rounded">Inspirace</span>
+          <span class="text-gray-400 text-sm">7 min čtení</span>
+        </div>
+        <a href="organizace-naradi.html">
+          <h3 class="text-xl font-bold text-gray-900 mb-2 hover:text-primary-500 transition-colors">7 tipů jak organizovat nářadí na regále</h3>
+        </a>
+        <p class="text-gray-600 mb-4">Plastové boxy, háčky, magnetické lišty - jak efektivně využít regálový prostor pro nářadí.</p>
+        <a href="organizace-naradi.html" class="text-primary-500 font-medium hover:text-primary-600">Číst více →</a>
+      </div>
+    </article>
+
+    <!-- Article 5 -->
+    <article class="article-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+      <a href="skladovani-pneumatik.html">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop" loading="lazy" alt="Skladování pneumatik" class="w-full h-48 object-cover">
+      </a>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">Praktické</span>
+          <span class="text-gray-400 text-sm">5 min čtení</span>
+        </div>
+        <a href="skladovani-pneumatik.html">
+          <h3 class="text-xl font-bold text-gray-900 mb-2 hover:text-primary-500 transition-colors">Správné skladování pneumatik na regále</h3>
+        </a>
+        <p class="text-gray-600 mb-4">Jak skladovat zimní a letní pneumatiky, aby vydržely co nejdéle. Držáky, police a správné rozložení.</p>
+        <a href="skladovani-pneumatik.html" class="text-primary-500 font-medium hover:text-primary-600">Číst více →</a>
+      </div>
+    </article>
+
+    <!-- Article 6 -->
+    <article class="article-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+      <a href="montaz-regalu.html">
+        <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&h=250&fit=crop" loading="lazy" alt="Montáž regálu" class="w-full h-48 object-cover">
+      </a>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">Návod</span>
+          <span class="text-gray-400 text-sm">12 min čtení</span>
+        </div>
+        <a href="montaz-regalu.html">
+          <h3 class="text-xl font-bold text-gray-900 mb-2 hover:text-primary-500 transition-colors">Montáž kovového regálu krok za krokem</h3>
+        </a>
+        <p class="text-gray-600 mb-4">Podrobný návod na sestavení kovového regálu. Jaké nářadí potřebujete a na co si dát pozor.</p>
+        <a href="montaz-regalu.html" class="text-primary-500 font-medium hover:text-primary-600">Číst více →</a>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Pagination -->
+  <div class="flex justify-center gap-2 mt-12">
+    <span class="px-4 py-2 bg-primary-500 text-white rounded-lg font-medium">1</span>
+    <a href="#" class="px-4 py-2 bg-white text-gray-700 rounded-lg font-medium hover:bg-primary-50 border">2</a>
+    <a href="#" class="px-4 py-2 bg-white text-gray-700 rounded-lg font-medium hover:bg-primary-50 border">3</a>
+    <a href="#" class="px-4 py-2 bg-white text-gray-700 rounded-lg font-medium hover:bg-primary-50 border">→</a>
+  </div>
+
+</main>
+
+<!-- RELATED LINKS -->
+<section class="bg-gray-100 py-12">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Související stránky</h2>
+    <div class="grid md:grid-cols-4 gap-4">
+      <a href="slovnik.html" class="bg-white p-4 rounded-xl hover:shadow-md transition-shadow">
+        <span class="text-2xl mb-2 block">📖</span>
+        <h3 class="font-bold text-gray-900">Slovník pojmů</h3>
+        <p class="text-sm text-gray-600">Regály, nosnosť, police...</p>
+      </a>
+      <a href="regaly-do-garaze.html" class="bg-white p-4 rounded-xl hover:shadow-md transition-shadow">
+        <span class="text-2xl mb-2 block">🚗</span>
+        <h3 class="font-bold text-gray-900">Regály do garáže</h3>
+        <p class="text-sm text-gray-600">Všechny modely vhodné do garáže</p>
+      </a>
+      <a href="regaly-do-sklepa.html" class="bg-white p-4 rounded-xl hover:shadow-md transition-shadow">
+        <span class="text-2xl mb-2 block">🏚️</span>
+        <h3 class="font-bold text-gray-900">Regály do sklepa</h3>
+        <p class="text-sm text-gray-600">Pozinkované regály do vlhka</p>
+      </a>
+      <a href="zinkove-regaly.html" class="bg-white p-4 rounded-xl hover:shadow-md transition-shadow">
+        <span class="text-2xl mb-2 block">🔩</span>
+        <h3 class="font-bold text-gray-900">Zinkové regály</h3>
+        <p class="text-sm text-gray-600">Odolné proti korozi</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-400 py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
+            <span class="text-white text-xl">🏭</span>
+          </div>
+          <span class="text-white font-bold text-xl">Bazarovyregal.sk</span>
+        </div>
+        <p class="text-sm">Specialista na kovové regály. Likvidácia skladu s najlepšiemi cenami v SR.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4">Kategórie</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="regaly-do-garaze.html" class="hover:text-primary-500">Regály do garáže</a></li>
+          <li><a href="regaly-do-sklepa.html" class="hover:text-primary-500">Regály do sklepa</a></li>
+          <li><a href="regaly-do-dilny.html" class="hover:text-primary-500">Regály do dílny</a></li>
+          <li><a href="katalog.html" class="hover:text-primary-500">Všetky regály</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4">Informácie</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="blog.html" class="hover:text-primary-500">Blog</a></li>
+          <li><a href="slovnik.html" class="hover:text-primary-500">Slovník pojmů</a></li>
+          <li><a href="o-nas.html" class="hover:text-primary-500">O nás</a></li>
+          <li><a href="faq.html" class="hover:text-primary-500">FAQ</a></li>
+          <li><a href="kontakt.html" class="hover:text-primary-500">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4">Kontakt</h4>
+        <p class="text-sm">info@bazarovyregal.sk</p>
+        <p class="text-sm mt-2">Po-Pi: 8:00 - 16:00</p>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-8 text-center text-sm">
+      <p>© 2025 Bazarovyregal.sk - Všetky práva vyhradené</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
