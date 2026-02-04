@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://vyprodej-regalucz.s26.cdn-upgates.com">
+
   <meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="canonical" href="https://www.bazarovyregal.sk/kontakt.html">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kontakt - Bazarovyregal.sk | Volajte alebo napište</title>
-  <meta name="description" content="Kontaktujte nás - Bazarovyregal.sk. Sme tu pre vás. Odpovedáme na vaše otázky do 24 hodín. Tel: +421 123 456 789, Email: info@bazarovyregal.sk">
+  <meta name="description" content="Kontaktujte nás - Bazarovyregal.sk. Sme tu pre vás. Odpovedáme na vaše otázky do 24 hodín. Email: info@bazarovyregal.sk">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -41,6 +50,9 @@
     .trust-icon { transition: transform 0.3s; }
     .trust-icon:hover { transform: scale(1.1); }
   </style>
+  <link rel="preconnect" href="https://vyprodej-regalucz.s26.cdn-upgates.com">
+  <meta name="theme-color" content="#f97316">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Domů", "item": "https://www.bazarovyregal.sk/index.html"}, {"@type": "ListItem", "position": 2, "name": "Kontakt", "item": "https://www.bazarovyregal.sk/kontakt.html"}]}</script>
 </head>
 <body class="bg-gray-50 font-sans">
 
@@ -78,13 +90,6 @@
 
       <!-- Contact & Cart -->
       <div class="flex items-center gap-6">
-        <a href="tel:+421123456789" class="hidden md:flex items-center gap-2 text-gray-600 hover:text-primary-500">
-          <span class="text-2xl">📞</span>
-          <div class="text-sm">
-            <div class="text-xs text-gray-400">Volajte</div>
-            <div class="font-bold">+421 123 456 789</div>
-          </div>
-        </a>
         <button class="flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-5 py-3 rounded-xl font-bold transition-colors">
           🛒 Košík <span class="bg-white text-primary-600 text-sm px-2 py-0.5 rounded-full">0</span>
         </button>
@@ -103,6 +108,16 @@
     </nav>
   </div>
 </header>
+
+<!-- Breadcrumbs Navigation -->
+<nav aria-label="Breadcrumb" class="bg-gray-100 py-3 px-4">
+  <div class="container mx-auto">
+    <ol class="flex items-center text-sm">
+      <a href="index.html" class="text-primary-500 hover:text-primary-600 hover:underline">Domů</a> <span class="text-gray-400 mx-2">›</span> <span class="text-gray-500">Kontakt</span>
+    </ol>
+  </div>
+</nav>
+
 
 <!-- HERO SECTION -->
 <section class="hero-gradient text-white relative overflow-hidden py-16 lg:py-24">
@@ -142,8 +157,8 @@
         </div>
         <h3 class="text-2xl font-bold text-gray-900 mb-2">Telefón</h3>
         <p class="text-gray-600 mb-4">Volajte nás přímo</p>
-        <a href="tel:+421123456789" class="text-primary-600 font-bold text-lg hover:text-primary-700">
-          +421 123 456 789
+        <a href="mailto:info@bazarovyregal.sk" class="text-primary-600 font-bold text-lg hover:text-primary-700">
+          info@bazarovyregal.sk
         </a>
         <p class="text-sm text-gray-500 mt-4">
           <strong>Po-Pi:</strong> 8:00 - 16:00<br>
@@ -241,7 +256,7 @@
               type="tel"
               id="phone"
               name="phone"
-              placeholder="+421 123 456 789"
+              placeholder="+420 xxx xxx xxx"
               class="form-input w-full px-5 py-3 border-2 border-gray-200 rounded-xl focus:outline-none transition-all"
             >
             <div class="error-message text-danger-500 text-sm mt-1 hidden"></div>
@@ -422,10 +437,10 @@
           <div class="text-4xl mb-4">🛒</div>
           <h3 class="text-2xl font-black text-gray-900 mb-3">Nákupy online</h3>
           <p class="text-gray-600 mb-6">
-            Nákupy prebiehajú cez overený e-shop <strong>Vyprodej-regalu.cz</strong>. Všetky transakcie sú bezpečné a chránené.
+            Nakupujte bezpečně přímo na našem webu. Všechny transakce jsou zabezpečené a chráněné.
           </p>
-          <a href="https://www.vyprodej-regalu.cz" target="_blank" class="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-lg font-medium transition-colors">
-            Ísť na e-shop →
+          <a href="katalog.html" class="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+            Prezrieť katalóg →
           </a>
         </div>
       </div>
@@ -518,10 +533,6 @@
         <h4 class="font-bold text-lg mb-4">Kontakt</h4>
         <ul class="space-y-3 text-gray-400">
           <li class="flex items-center gap-3">
-            <span class="text-xl">📞</span>
-            <a href="tel:+421123456789" class="hover:text-primary-400">+421 123 456 789</a>
-          </li>
-          <li class="flex items-center gap-3">
             <span class="text-xl">✉️</span>
             <a href="mailto:info@bazarovyregal.sk" class="hover:text-primary-400">info@bazarovyregal.sk</a>
           </li>
@@ -546,11 +557,7 @@
     <!-- Bottom bar -->
     <div class="border-t border-gray-800 pt-8">
       <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
-        <div>© 2026 Bazarovyregal.sk - Všetky práva vyhradené</div>
-        <div class="flex items-center gap-2">
-          <span>Nákup prebieha na</span>
-          <a href="https://www.vyprodej-regalu.cz" class="text-primary-400 hover:underline" target="_blank">Vyprodej-regalu.cz</a>
-        </div>
+        <div>© 2026 Bazarovyregal.sk - Shoptet.cz - Budujeme regálové impérium</div>
       </div>
     </div>
   </div>

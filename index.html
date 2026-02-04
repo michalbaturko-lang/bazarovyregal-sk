@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://vyprodej-regalucz.s26.cdn-upgates.com">
+
   <meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="canonical" href="https://www.bazarovyregal.sk/index.html">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bazarovyregal.sk - LIKVIDÁCIA SKLADU | Kovové regály soe slevou až 40%</title>
   <meta name="description" content="🔥 Likvidácia skladu! Všechny kovové regály musia preč. Iba nové a nerozbalené. 7 rokov záruka. Zľavy až 40%. Doprava od 3,99 €. Skladom přes 10 000 ks.">
@@ -46,6 +55,9 @@
     .shine::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%); transform: rotate(30deg); animation: shine 3s infinite; }
     @keyframes shine { 0% { transform: translateX(-100%) rotate(30deg); } 100% { transform: translateX(100%) rotate(30deg); } }
   </style>
+  <link rel="preconnect" href="https://vyprodej-regalucz.s26.cdn-upgates.com">
+  <meta name="theme-color" content="#f97316">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Domů", "item": "https://www.bazarovyregal.sk/index.html"}]}</script>
 </head>
 <body class="bg-gray-50 font-sans">
 
@@ -63,9 +75,9 @@
   <div class="container mx-auto px-4">
     <div class="flex items-center justify-between py-4">
       <!-- Logo -->
-      <a href="#" class="flex items-center gap-3">
+      <a href="index.html" class="flex items-center gap-3">
         <div class="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center shadow-lg">
-          <span class="text-white text-2xl">🏭</span>
+          <span class="text-white text-3xl font-black">B</span>
         </div>
         <div>
           <div class="text-2xl font-black text-gray-900">Bazarovyregal<span class="text-primary-500">.sk</span></div>
@@ -73,23 +85,74 @@
         </div>
       </a>
 
-      <!-- Search -->
-      <div class="hidden lg:flex flex-1 max-w-xl mx-8">
+      <!-- LUIGI'S BOX STYLE SEARCH -->
+      <div class="hidden lg:flex flex-1 max-w-xl mx-8 relative">
         <div class="relative w-full">
-          <input type="text" placeholder="Hľadať regály... (např. regál 180x90)" class="w-full pl-5 pr-12 py-3 border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:ring-0 transition-colors">
-          <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary-500 text-xl">🔍</button>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Hľadať regály... (např. 180 cm, čierny, do garáže)"
+            class="w-full border-2 border-gray-200 rounded-xl py-3 px-5 pr-24 focus:border-primary-500 focus:outline-none text-sm"
+            onkeyup="handleSearch(event)"
+            onfocus="showSearchDropdown()"
+            autocomplete="off"
+          >
+          <button onclick="performSearch()" class="absolute right-2 top-1/2 -translate-y-1/2 bg-primary-500 hover:bg-primary-600 text-white px-5 py-2 rounded-lg font-medium text-sm transition">
+            Hľadať
+          </button>
+        </div>
+
+        <!-- Search Dropdown -->
+        <div id="searchDropdown" class="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border overflow-hidden hidden z-50" style="min-width: 600px;">
+          <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-l border-t rotate-45"></div>
+
+          <div class="flex">
+            <!-- Levá část - Top produkt -->
+            <div class="w-56 bg-gray-50 p-4 border-r">
+              <div class="text-xs text-gray-500 mb-2">Doporučený produkt</div>
+              <div id="searchTopProduct">
+                <a href="regal-180x90x40-cerna.html" class="block">
+                  <img src="https://vyprodej-regalucz.s26.cdn-upgates.com/l/l690377af7480a-1-regal-1800x900x400-mm-lakovany-5-policovy-nosnosť-875-kg-cerny-pravy-18090405875black1.jpeg" loading="lazy" alt="" class="w-full aspect-square object-contain bg-white rounded-lg mb-2">
+                  <h4 class="font-medium text-sm line-clamp-2 mb-1">Regál 180×90×40 cm čierny</h4>
+                  <div class="text-green-600 text-xs mb-1">Skladom</div>
+                  <div class="mb-2">
+                    <span class="text-lg font-bold">29,49 €</span>
+                    <span class="text-xs text-gray-400 line-through ml-1">2956 €</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Pravá část - Produkty grid -->
+            <div class="flex-1 p-4">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-sm font-bold text-gray-900">Produkty</h3>
+                <button onclick="document.getElementById('searchDropdown').classList.add('hidden')" class="text-gray-400 hover:text-gray-600 text-xl">×</button>
+              </div>
+              <div id="searchProducts" class="grid grid-cols-2 gap-3 mb-4">
+                <!-- Dynamicky generováno -->
+              </div>
+              <a id="searchShowAll" href="katalog.html" class="block text-center text-sm text-primary-500 hover:text-primary-600 font-medium py-2 border-t">
+                Zobraziť všetkyny výsledky →
+              </a>
+            </div>
+          </div>
+
+          <!-- Populární hledání -->
+          <div class="bg-gray-50 p-4 border-t">
+            <div class="text-xs text-gray-500 mb-2">Populární hledání</div>
+            <div class="flex flex-wrap gap-2">
+              <button onclick="setSearch('regál do garáže')" class="text-xs bg-white border px-3 py-1.5 rounded-full hover:border-primary-500 hover:text-primary-500">regál do garáže</button>
+              <button onclick="setSearch('180x90')" class="text-xs bg-white border px-3 py-1.5 rounded-full hover:border-primary-500 hover:text-primary-500">180×90 cm</button>
+              <button onclick="setSearch('zinkovaný')" class="text-xs bg-white border px-3 py-1.5 rounded-full hover:border-primary-500 hover:text-primary-500">zinkovaný</button>
+              <button onclick="setSearch('čierny regál')" class="text-xs bg-white border px-3 py-1.5 rounded-full hover:border-primary-500 hover:text-primary-500">čierny regál</button>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Contact & Cart -->
       <div class="flex items-center gap-6">
-        <a href="tel:+421123456789" class="hidden md:flex items-center gap-2 text-gray-600 hover:text-primary-500">
-          <span class="text-2xl">📞</span>
-          <div class="text-sm">
-            <div class="text-xs text-gray-400">Volajte</div>
-            <div class="font-bold">+421 123 456 789</div>
-          </div>
-        </a>
         <button class="flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-5 py-3 rounded-xl font-bold transition-colors">
           🛒 Košík <span class="bg-white text-primary-600 text-sm px-2 py-0.5 rounded-full">0</span>
         </button>
@@ -100,15 +163,26 @@
     <nav class="flex gap-1 pb-3 overflow-x-auto">
       <a href="index.html" class="px-4 py-2 text-sm font-medium text-primary-500 bg-primary-50 rounded-lg whitespace-nowrap">🏠 Úvod</a>
       <a href="katalog.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">📦 Všetky regály</a>
-      <a href="o-nas.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">ℹ️ O nás</a>
-      <a href="faq.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">❓ FAQ</a>
-      <a href="kontakt.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">📧 Kontakt</a>
+      <a href="regaly-do-garaze.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">🚗 Do garáže</a>
+      <a href="regaly-do-sklepa.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">🏚️ Do sklepa</a>
+      <a href="blog.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">📝 Blog</a>
+      <a href="slovnik.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">📖 Slovník</a>
       <a href="katalog.html" class="px-4 py-2 text-sm font-medium text-red-600 bg-red-50 rounded-lg whitespace-nowrap flex items-center gap-1">
         🔥 <span>VÝPREDAJ</span>
       </a>
     </nav>
   </div>
 </header>
+
+<!-- Breadcrumbs Navigation -->
+<nav aria-label="Breadcrumb" class="bg-gray-100 py-3 px-4">
+  <div class="container mx-auto">
+    <ol class="flex items-center text-sm">
+      <span class="text-gray-500">Domů</span>
+    </ol>
+  </div>
+</nav>
+
 
 <!-- HERO SECTION -->
 <section class="hero-gradient text-white relative overflow-hidden">
@@ -209,14 +283,14 @@
           -40%
         </div>
 
-        <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 relative">
-          <img src="https://vyprodej-regalucz.s26.cdn-upgates.com/t/t6914603733712-4-pol-pravy-zink.jpg" alt="Regál" class="w-full max-w-md mx-auto floating">
+        <a href="regal-150x70x30-zinkovany.html" class="block bg-white/10 backdrop-blur-lg rounded-3xl p-8 relative hover:bg-white/20 transition-colors cursor-pointer">
+          <img src="https://vyprodej-regalucz.s26.cdn-upgates.com/t/t6914603733712-4-pol-pravy-zink.jpg" loading="lazy" alt="Regál 150×70×30 cm zinkovaný" class="w-full max-w-md mx-auto floating">
 
           <div class="absolute bottom-4 left-4 right-4 bg-white rounded-2xl p-4 shadow-xl">
             <div class="flex items-center justify-between">
               <div>
-                <div class="text-xs text-gray-500 line-through">24,99 €</div>
-                <div class="text-2xl font-black text-primary-600">19,49 €</div>
+                <div class="text-xs text-gray-500 line-through">2 636 €</div>
+                <div class="text-2xl font-black text-primary-600">659 €</div>
               </div>
               <div class="text-right">
                 <div class="text-xs text-red-600 font-bold stock-warning">⚡ Pouze 47 ks!</div>
@@ -224,7 +298,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -282,10 +356,10 @@
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- Category 1 -->
-      <a href="#" class="category-card bg-white rounded-2xl overflow-hidden shadow-sm group">
-        <div class="aspect-video bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-6xl p-6">
-          🏡
+      <!-- Category 1 - Domov -->
+      <a href="katalog.html" class="category-card bg-white rounded-2xl overflow-hidden shadow-sm group">
+        <div class="aspect-video overflow-hidden">
+          <img src="home.png" loading="lazy" alt="Regály do domu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
         </div>
         <div class="p-5">
           <h3 class="font-bold text-lg mb-1 group-hover:text-primary-500 transition-colors">Regály do domu</h3>
@@ -297,10 +371,10 @@
         </div>
       </a>
 
-      <!-- Category 2 -->
-      <a href="#" class="category-card bg-white rounded-2xl overflow-hidden shadow-sm group">
-        <div class="aspect-video bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center text-6xl p-6">
-          🏭
+      <!-- Category 2 - Sklad -->
+      <a href="katalog.html" class="category-card bg-white rounded-2xl overflow-hidden shadow-sm group">
+        <div class="aspect-video overflow-hidden">
+          <img src="warehouse.png" loading="lazy" alt="Regály do skladu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
         </div>
         <div class="p-5">
           <h3 class="font-bold text-lg mb-1 group-hover:text-primary-500 transition-colors">Regály do skladu</h3>
@@ -312,10 +386,10 @@
         </div>
       </a>
 
-      <!-- Category 3 -->
-      <a href="#" class="category-card bg-white rounded-2xl overflow-hidden shadow-sm group">
-        <div class="aspect-video bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center text-6xl p-6">
-          🔧
+      <!-- Category 3 - Garáž -->
+      <a href="regaly-do-garaze.html" class="category-card bg-white rounded-2xl overflow-hidden shadow-sm group">
+        <div class="aspect-video overflow-hidden">
+          <img src="garage.png" loading="lazy" alt="Regály do garáže" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
         </div>
         <div class="p-5">
           <h3 class="font-bold text-lg mb-1 group-hover:text-primary-500 transition-colors">Regály do garáže</h3>
@@ -327,10 +401,10 @@
         </div>
       </a>
 
-      <!-- Category 4 -->
-      <a href="#" class="category-card bg-white rounded-2xl overflow-hidden shadow-sm group">
-        <div class="aspect-video bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center text-6xl p-6">
-          📁
+      <!-- Category 4 - Kancelária -->
+      <a href="katalog.html" class="category-card bg-white rounded-2xl overflow-hidden shadow-sm group">
+        <div class="aspect-video overflow-hidden">
+          <img src="office.png" loading="lazy" alt="Regály do kancelárie" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
         </div>
         <div class="p-5">
           <h3 class="font-bold text-lg mb-1 group-hover:text-primary-500 transition-colors">Regály do kancelárie</h3>
@@ -362,108 +436,124 @@
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <!-- Product 1 -->
-      <a href="https://www.vyprodej-regalu.cz/p/regal-1500x700x300-mm-pozinkovany-4-policovy-nosnosť-700-kg?utm_source=bazarovyregal&utm_medium=affiliate&utm_campaign=homepage" target="_blank" class="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:border-primary-200 hover:shadow-xl transition-all group block">
-        <div class="relative">
-          <img src="https://vyprodej-regalucz.s26.cdn-upgates.com/t/t6914603733712-4-pol-pravy-zink.jpg" alt="Regál zinkovaný" class="product-image w-full p-4 group-hover:scale-105 transition-transform">
-          <span class="mega-badge absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full sale-badge">🔥 -21%</span>
-          <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">Skladom</span>
-          <div class="absolute bottom-3 left-3 right-3 bg-red-50 border border-red-200 text-red-700 text-xs font-medium px-3 py-1.5 rounded-lg text-center stock-warning">
-            ⚡ Zostáva iba 47 ks!
+      <div class="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:border-primary-200 hover:shadow-xl transition-all group block">
+        <a href="regal-150x70x30-zinkovany.html" class="block">
+          <div class="relative">
+            <img src="https://vyprodej-regalucz.s26.cdn-upgates.com/t/t6914603733712-4-pol-pravy-zink.jpg" loading="lazy" alt="Regál zinkovaný" class="product-image w-full p-4 group-hover:scale-105 transition-transform">
+            <span class="mega-badge absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full sale-badge">🔥 -61%</span>
+            <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">Skladom</span>
+            <div class="absolute bottom-3 left-3 right-3 bg-red-50 border border-red-200 text-red-700 text-xs font-medium px-3 py-1.5 rounded-lg text-center stock-warning">
+              ⚡ Zostáva iba 47 ks!
+            </div>
           </div>
-        </div>
-        <div class="p-4">
-          <div class="text-xs text-gray-500 mb-1">150×70×30 cm • Zinkovaný</div>
-          <h3 class="font-bold text-sm mb-2 line-clamp-2 min-h-10 group-hover:text-primary-500">Regál 1500x700x300 mm zinkovaný 4-policový, nosnosť 700 kg</h3>
-          <div class="flex items-center gap-2 mb-3">
-            <span class="text-yellow-400 text-sm">★★★★★</span>
-            <span class="text-xs text-gray-500">(89)</span>
+          <div class="p-4">
+            <div class="text-xs text-gray-500 mb-1">150×70×30 cm • Zinkovaný</div>
+            <h3 class="font-bold text-sm mb-2 line-clamp-2 min-h-10 group-hover:text-primary-500">Regál 1500x700x300 mm zinkovaný 4-policový, nosnosť 700 kg</h3>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-yellow-400 text-sm">★★★★★</span>
+              <span class="text-xs text-gray-500">(89)</span>
+            </div>
+            <div class="flex items-baseline gap-2 mb-3">
+              <span class="text-2xl font-black text-primary-600">659 €</span>
+              <span class="text-sm text-gray-400 line-through">2 636 €</span>
+            </div>
           </div>
-          <div class="flex items-baseline gap-2 mb-3">
-            <span class="text-2xl font-black text-primary-600">19,49 €</span>
-            <span class="text-sm text-gray-400 line-through">24,99 €</span>
-          </div>
-          <span class="w-full bg-primary-500 hover:bg-primary-600 text-white py-3 rounded-xl font-bold text-sm transition-colors flex items-center justify-center gap-2">
+        </a>
+        <div class="p-4 pt-0">
+          <a href="regal-150x70x30-zinkovany.html" class="w-full bg-primary-500 hover:bg-primary-600 text-white py-3 rounded-xl font-bold text-sm transition-colors flex items-center justify-center gap-2">
             🛒 Do košíka
-          </span>
+          </a>
         </div>
-      </a>
+      </div>
 
       <!-- Product 2 -->
-      <a href="https://www.vyprodej-regalu.cz/p/regal-1500x700x300-mm-lakovany-4-policovy-nosnosť-700-kg-cerny?utm_source=bazarovyregal&utm_medium=affiliate&utm_campaign=homepage" target="_blank" class="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:border-primary-200 hover:shadow-xl transition-all group block">
-        <div class="relative">
-          <img src="https://vyprodej-regalucz.s26.cdn-upgates.com/v/v6903779a99ff1-1-regal-1500x700x300-mm-lakovany-4-policovy-nosnosť-700-kg-cerny-pravy-15070304700black1.jpeg" alt="Regál čierny" class="product-image w-full p-4 group-hover:scale-105 transition-transform">
-          <span class="absolute top-3 left-3 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-full">-4%</span>
-          <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">Skladom</span>
-        </div>
-        <div class="p-4">
-          <div class="text-xs text-gray-500 mb-1">150×70×30 cm • Čierny</div>
-          <h3 class="font-bold text-sm mb-2 line-clamp-2 min-h-10 group-hover:text-primary-500">Regál 1500x700x300 mm lakovaný 4-policový, nosnosť 700 kg - čierny</h3>
-          <div class="flex items-center gap-2 mb-3">
-            <span class="text-yellow-400 text-sm">★★★★★</span>
-            <span class="text-xs text-gray-500">(127)</span>
+      <div class="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:border-primary-200 hover:shadow-xl transition-all group block">
+        <a href="regal-150x70x30-cerna.html" class="block">
+          <div class="relative">
+            <img src="https://vyprodej-regalucz.s26.cdn-upgates.com/v/v6903779a99ff1-1-regal-1500x700x300-mm-lakovany-4-policovy-nosnosť-700-kg-cerny-pravy-15070304700black1.jpeg" loading="lazy" alt="Regál čierny" class="product-image w-full p-4 group-hover:scale-105 transition-transform">
+            <span class="absolute top-3 left-3 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-full">-52%</span>
+            <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">Skladom</span>
           </div>
-          <div class="flex items-baseline gap-2 mb-3">
-            <span class="text-2xl font-black text-primary-600">53,99 €</span>
-            <span class="text-sm text-gray-400 line-through">24,99 €</span>
+          <div class="p-4">
+            <div class="text-xs text-gray-500 mb-1">150×70×30 cm • Čierny</div>
+            <h3 class="font-bold text-sm mb-2 line-clamp-2 min-h-10 group-hover:text-primary-500">Regál 1500x700x300 mm lakovaný 4-policový, nosnosť 700 kg - čierny</h3>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-yellow-400 text-sm">★★★★★</span>
+              <span class="text-xs text-gray-500">(127)</span>
+            </div>
+            <div class="flex items-baseline gap-2 mb-3">
+              <span class="text-2xl font-black text-primary-600">709 €</span>
+              <span class="text-sm text-gray-400 line-through">2 836 €</span>
+            </div>
           </div>
-          <span class="w-full bg-primary-500 hover:bg-primary-600 text-white py-3 rounded-xl font-bold text-sm transition-colors flex items-center justify-center gap-2">
+        </a>
+        <div class="p-4 pt-0">
+          <a href="regal-150x70x30-cerna.html" class="w-full bg-primary-500 hover:bg-primary-600 text-white py-3 rounded-xl font-bold text-sm transition-colors flex items-center justify-center gap-2">
             🛒 Do košíka
-          </span>
+          </a>
         </div>
-      </a>
+      </div>
 
       <!-- Product 3 -->
-      <a href="https://www.vyprodej-regalu.cz/p/regal-1800x400x400-mm-pozinkovany-5-policovy-nosnosť-875-kg?utm_source=bazarovyregal&utm_medium=affiliate&utm_campaign=homepage" target="_blank" class="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:border-primary-200 hover:shadow-xl transition-all group block">
-        <div class="relative">
-          <img src="https://vyprodej-regalucz.s26.cdn-upgates.com/j/j690a777567327-1-18040405875z1.jpeg" alt="Regál zinkovaný 5-pol" class="product-image w-full p-4 group-hover:scale-105 transition-transform">
-          <span class="mega-badge absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full sale-badge">🔥 -14%</span>
-          <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">Skladom</span>
-        </div>
-        <div class="p-4">
-          <div class="text-xs text-gray-500 mb-1">180×40×40 cm • Zinkovaný</div>
-          <h3 class="font-bold text-sm mb-2 line-clamp-2 min-h-10 group-hover:text-primary-500">Regál 1800x400x400 mm zinkovaný 5-policový, nosnosť 875 kg</h3>
-          <div class="flex items-center gap-2 mb-3">
-            <span class="text-yellow-400 text-sm">★★★★★</span>
-            <span class="text-xs text-gray-500">(64)</span>
+      <div class="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:border-primary-200 hover:shadow-xl transition-all group block">
+        <a href="regal-180x40x40-zinkovany.html" class="block">
+          <div class="relative">
+            <img src="https://vyprodej-regalucz.s26.cdn-upgates.com/j/j690a777567327-1-18040405875z1.jpeg" loading="lazy" alt="Regál zinkovaný 5-pol" class="product-image w-full p-4 group-hover:scale-105 transition-transform">
+            <span class="mega-badge absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full sale-badge">🔥 -57%</span>
+            <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">Skladom</span>
           </div>
-          <div class="flex items-baseline gap-2 mb-3">
-            <span class="text-2xl font-black text-primary-600">22,79 €</span>
-            <span class="text-sm text-gray-400 line-through">26,49 €</span>
+          <div class="p-4">
+            <div class="text-xs text-gray-500 mb-1">180×40×40 cm • Zinkovaný</div>
+            <h3 class="font-bold text-sm mb-2 line-clamp-2 min-h-10 group-hover:text-primary-500">Regál 1800x400x400 mm zinkovaný 5-policový, nosnosť 875 kg</h3>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-yellow-400 text-sm">★★★★★</span>
+              <span class="text-xs text-gray-500">(64)</span>
+            </div>
+            <div class="flex items-baseline gap-2 mb-3">
+              <span class="text-2xl font-black text-primary-600">679 €</span>
+              <span class="text-sm text-gray-400 line-through">2 716 €</span>
+            </div>
           </div>
-          <span class="w-full bg-primary-500 hover:bg-primary-600 text-white py-3 rounded-xl font-bold text-sm transition-colors flex items-center justify-center gap-2">
+        </a>
+        <div class="p-4 pt-0">
+          <a href="regal-180x40x40-zinkovany.html" class="w-full bg-primary-500 hover:bg-primary-600 text-white py-3 rounded-xl font-bold text-sm transition-colors flex items-center justify-center gap-2">
             🛒 Do košíka
-          </span>
+          </a>
         </div>
-      </a>
+      </div>
 
       <!-- Product 4 -->
-      <a href="https://www.vyprodej-regalu.cz/p/regal-profesionalni-1800x1600x500-mm-lakovany-4-policovy-nosnosť-1200-kg?utm_source=bazarovyregal&utm_medium=affiliate&utm_campaign=homepage" target="_blank" class="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:border-primary-200 hover:shadow-xl transition-all group block">
-        <div class="relative">
-          <img src="https://vyprodej-regalucz.s26.cdn-upgates.com/o/o690df135051a1-01-1801605041200bo2.jpg" alt="Profesionální regál" class="product-image w-full p-4 group-hover:scale-105 transition-transform">
-          <span class="absolute top-3 left-3 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">PRO</span>
-          <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs px-2 py-1 rounded-full">Na dotaz</span>
-        </div>
-        <div class="p-4">
-          <div class="text-xs text-gray-500 mb-1">180×120×50 cm • Profesionální</div>
-          <h3 class="font-bold text-sm mb-2 line-clamp-2 min-h-10 group-hover:text-primary-500">Regál profesionálny 4-policový, nosnosť 1200 kg - modro-oranžový</h3>
-          <div class="flex items-center gap-2 mb-3">
-            <span class="text-yellow-400 text-sm">★★★★★</span>
-            <span class="text-xs text-gray-500">(23)</span>
+      <div class="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:border-primary-200 hover:shadow-xl transition-all group block">
+        <a href="regal-180x120x50-profesionalni.html" class="block">
+          <div class="relative">
+            <img src="https://vyprodej-regalucz.s26.cdn-upgates.com/_cache/b/1/b17ce5b491bdb73a0df3160b51fbcf7e-1-regal-1800x1200x500-mm-lakovany-5-policovy-nosnosť-1050-kg-modro-oranzovy-pravy-18120501050orangeblue1.jpeg" loading="lazy" alt="Profesionální regál modro-oranžový" class="product-image w-full p-4 group-hover:scale-105 transition-transform">
+            <span class="absolute top-3 left-3 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">PRO</span>
+            <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs px-2 py-1 rounded-full">Na dotaz</span>
           </div>
-          <div class="flex items-baseline gap-2 mb-3">
-            <span class="text-2xl font-black text-primary-600">117,99 €</span>
-            <span class="text-sm text-gray-400 line-through">138,39 €</span>
+          <div class="p-4">
+            <div class="text-xs text-gray-500 mb-1">180×120×50 cm • Profesionální</div>
+            <h3 class="font-bold text-sm mb-2 line-clamp-2 min-h-10 group-hover:text-primary-500">Regál profesionálny 4-policový, nosnosť 1200 kg - modro-oranžový</h3>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-yellow-400 text-sm">★★★★★</span>
+              <span class="text-xs text-gray-500">(23)</span>
+            </div>
+            <div class="flex items-baseline gap-2 mb-3">
+              <span class="text-2xl font-black text-primary-600">1 009 €</span>
+              <span class="text-sm text-gray-400 line-through">4 036 €</span>
+            </div>
           </div>
-          <span class="w-full bg-primary-500 hover:bg-primary-600 text-white py-3 rounded-xl font-bold text-sm transition-colors flex items-center justify-center gap-2">
+        </a>
+        <div class="p-4 pt-0">
+          <a href="regal-180x120x50-profesionalni.html" class="w-full bg-primary-500 hover:bg-primary-600 text-white py-3 rounded-xl font-bold text-sm transition-colors flex items-center justify-center gap-2">
             🛒 Do košíka
-          </span>
+          </a>
         </div>
-      </a>
+      </div>
     </div>
 
     <!-- Load more -->
     <div class="text-center mt-10">
-      <a href="#" class="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-800 px-8 py-4 rounded-xl font-bold transition-colors">
+      <a href="katalog.html" class="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-800 px-8 py-4 rounded-xl font-bold transition-colors">
         Zobraziť ďalšie 98 produktov
         <span class="text-gray-400">→</span>
       </a>
@@ -650,21 +740,60 @@
   </div>
 </section>
 
-<!-- NEWSLETTER -->
-<section class="py-16 bg-gradient-to-r from-primary-500 to-primary-600">
+<!-- SEO INTERNAL LINKS -->
+<section class="py-12 bg-gray-100">
   <div class="container mx-auto px-4">
-    <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl font-black text-white mb-4">Získajte zľavu 10% navyše!</h2>
-      <p class="text-primary-100 mb-8">Prihláste sa na odber noviniek a získajte zľavový kód na prvú objednávku.</p>
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Regály podle využití</h2>
+    <div class="grid md:grid-cols-4 gap-4 mb-8">
+      <a href="regaly-do-garaze.html" class="bg-white p-6 rounded-xl hover:shadow-lg transition-shadow group">
+        <span class="text-3xl mb-3 block group-hover:scale-110 transition-transform">🚗</span>
+        <h3 class="font-bold text-gray-900 mb-1">Regály do garáže</h3>
+        <p class="text-sm text-gray-600">Pro nářadí, pneumatiky a sezónní věci</p>
+        <span class="text-primary-500 text-sm font-medium mt-2 block">Zobraziť →</span>
+      </a>
+      <a href="regaly-do-sklepa.html" class="bg-white p-6 rounded-xl hover:shadow-lg transition-shadow group">
+        <span class="text-3xl mb-3 block group-hover:scale-110 transition-transform">🏚️</span>
+        <h3 class="font-bold text-gray-900 mb-1">Regály do sklepa</h3>
+        <p class="text-sm text-gray-600">Pozinkované, odolné vlhkosti</p>
+        <span class="text-primary-500 text-sm font-medium mt-2 block">Zobraziť →</span>
+      </a>
+      <a href="regaly-do-dilny.html" class="bg-white p-6 rounded-xl hover:shadow-lg transition-shadow group">
+        <span class="text-3xl mb-3 block group-hover:scale-110 transition-transform">🔧</span>
+        <h3 class="font-bold text-gray-900 mb-1">Regály do dílny</h3>
+        <p class="text-sm text-gray-600">Vysoká nosnosť pro materiál</p>
+        <span class="text-primary-500 text-sm font-medium mt-2 block">Zobraziť →</span>
+      </a>
+      <a href="zinkove-regaly.html" class="bg-white p-6 rounded-xl hover:shadow-lg transition-shadow group">
+        <span class="text-3xl mb-3 block group-hover:scale-110 transition-transform">🔩</span>
+        <h3 class="font-bold text-gray-900 mb-1">Zinkové regály</h3>
+        <p class="text-sm text-gray-600">Maximální odolnost proti korozi</p>
+        <span class="text-primary-500 text-sm font-medium mt-2 block">Zobraziť →</span>
+      </a>
+    </div>
 
-      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-        <input type="email" placeholder="Váš e-mail" class="flex-1 px-5 py-4 rounded-xl focus:ring-2 focus:ring-white focus:outline-none">
-        <button type="submit" class="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-xl font-bold transition-colors whitespace-nowrap">
-          Chcem zľavu →
-        </button>
-      </form>
-
-      <p class="text-primary-200 text-sm mt-4">Žiadny spam. Odhlásiť sa môžete kedykoľvek.</p>
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Užitečné informace</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <a href="jak-vybrať-regal-do-garaze.html" class="bg-white p-5 rounded-xl hover:shadow-lg transition-shadow flex items-start gap-4">
+        <span class="text-2xl">📝</span>
+        <div>
+          <h3 class="font-bold text-gray-900 mb-1">Jak vybrať regál do garáže</h3>
+          <p class="text-sm text-gray-600">Kompletní průvodce výběrem</p>
+        </div>
+      </a>
+      <a href="slovnik.html" class="bg-white p-5 rounded-xl hover:shadow-lg transition-shadow flex items-start gap-4">
+        <span class="text-2xl">📖</span>
+        <div>
+          <h3 class="font-bold text-gray-900 mb-1">Slovník pojmů</h3>
+          <p class="text-sm text-gray-600">Nosnosť, police, zinkování...</p>
+        </div>
+      </a>
+      <a href="blog.html" class="bg-white p-5 rounded-xl hover:shadow-lg transition-shadow flex items-start gap-4">
+        <span class="text-2xl">💡</span>
+        <div>
+          <h3 class="font-bold text-gray-900 mb-1">Blog a návody</h3>
+          <p class="text-sm text-gray-600">Tipy pro organizaci a skladování</p>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -676,7 +805,7 @@
       <!-- About -->
       <div>
         <div class="flex items-center gap-2 mb-4">
-          <div class="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">🏭</div>
+          <div class="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center text-white text-xl font-black">B</div>
           <div class="text-xl font-bold">Bazarovyregal<span class="text-primary-500">.sk</span></div>
         </div>
         <p class="text-gray-400 text-sm mb-4">
@@ -718,10 +847,6 @@
         <h4 class="font-bold text-lg mb-4">Kontakt</h4>
         <ul class="space-y-3 text-gray-400">
           <li class="flex items-center gap-3">
-            <span class="text-xl">📞</span>
-            <a href="tel:+421123456789" class="hover:text-primary-400">+421 123 456 789</a>
-          </li>
-          <li class="flex items-center gap-3">
             <span class="text-xl">✉️</span>
             <a href="mailto:info@bazarovyregal.sk" class="hover:text-primary-400">info@bazarovyregal.sk</a>
           </li>
@@ -746,10 +871,9 @@
     <!-- Bottom bar -->
     <div class="border-t border-gray-800 pt-8">
       <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
-        <div>© 2026 Bazarovyregal.sk - Všetky práva vyhradené</div>
+        <div>© 2026 Bazarovyregal.sk - Shoptet.cz - Budujeme regálové impérium</div>
         <div class="flex items-center gap-2">
-          <span>Nákup prebieha na</span>
-          <a href="https://www.vyprodej-regalu.cz" class="text-primary-400 hover:underline" target="_blank">Vyprodej-regalu.cz</a>
+          <span>Bezpečný nákup s 7-ročnou zárukou</span>
         </div>
       </div>
     </div>
@@ -824,8 +948,170 @@ function animateStats() {
 document.addEventListener('DOMContentLoaded', () => {
   updateCountdown();
   animateStats();
+  renderDefaultSearch();
+});
+
+// ========== LUIGI'S BOX SEARCH ==========
+const searchProducts = [
+  { id: 1, name: "Regál 150×70×30 cm čierny", price: 599, priceOrig: 2396, height: 150, width: 70, depth: 30, color: "Čierna", image: "https://vyprodej-regalucz.s26.cdn-upgates.com/v/v6903779a99ff1-1-regal-1500x700x300-mm-lakovany-4-policovy-nosnosť-700-kg-cerny-pravy-15070304700black1.jpeg", url: "regal-150x70x30-cerna.html" },
+  { id: 2, name: "Regál 150×70×30 cm zinkovaný", price: 549, priceOrig: 2196, height: 150, width: 70, depth: 30, color: "Zinkovaný", image: "https://vyprodej-regalucz.s26.cdn-upgates.com/_cache/z/z/z6914605330838-5-pol-pravy-zink.jpg", url: "regal-150x70x30-zinkovany.html" },
+  { id: 3, name: "Regál 180×90×40 cm čierny", price: 739, priceOrig: 2956, height: 180, width: 90, depth: 40, color: "Čierna", image: "https://vyprodej-regalucz.s26.cdn-upgates.com/l/l690377af7480a-1-regal-1800x900x400-mm-lakovany-5-policovy-nosnosť-875-kg-cerny-pravy-18090405875black1.jpeg", url: "regal-180x90x40-cerna.html", bestseller: true },
+  { id: 4, name: "Regál 180×90×40 cm zinkovaný", price: 649, priceOrig: 2596, height: 180, width: 90, depth: 40, color: "Zinkovaný", image: "https://vyprodej-regalucz.s26.cdn-upgates.com/_cache/z/z/z6914605330838-5-pol-pravy-zink.jpg", url: "regal-180x90x40-zinkovany.html" },
+  { id: 5, name: "Regál 180×90×40 cm biely", price: 739, priceOrig: 2956, height: 180, width: 90, depth: 40, color: "Biela", image: "https://vyprodej-regalucz.s26.cdn-upgates.com/_cache/6/6/6690a777ad6edc-1-18090405875white1.jpeg", url: "regal-180x90x40-bila.html" },
+  { id: 6, name: "Regál 180×90×40 cm červený", price: 759, priceOrig: 3036, height: 180, width: 90, depth: 40, color: "Červená", image: "https://vyprodej-regalucz.s26.cdn-upgates.com/_cache/9/e/9eef5f9f2ad8880b75926a3eae58485b-1-regal-1500x700x300-mm-lakovany-4-policovy-nosnosť-700-kg-cerveny-pravy-15070304700red1.jpeg", url: "regal-180x90x40-cervena.html" },
+  { id: 7, name: "Regál 180×90×40 cm modrý", price: 759, priceOrig: 3036, height: 180, width: 90, depth: 40, color: "Modrá", image: "https://vyprodej-regalucz.s26.cdn-upgates.com/_cache/1/c/1c64831c1231f5847cf9e7a36f6cdf6f-1-15070304700blue1.jpeg", url: "regal-180x90x40-modra.html" },
+  { id: 8, name: "Regál 180×40×40 cm zinkovaný", price: 579, priceOrig: 2316, height: 180, width: 40, depth: 40, color: "Zinkovaný", image: "https://vyprodej-regalucz.s26.cdn-upgates.com/_cache/z/z/z6914605330838-5-pol-pravy-zink.jpg", url: "regal-180x40x40-zinkovany.html" },
+  { id: 9, name: "Regál 200×90×40 cm čierny", price: 849, priceOrig: 3396, height: 200, width: 90, depth: 40, color: "Čierna", image: "https://vyprodej-regalucz.s26.cdn-upgates.com/l/l690377af7480a-1-regal-1800x900x400-mm-lakovany-5-policovy-nosnosť-875-kg-cerny-pravy-18090405875black1.jpeg", url: "regal-200x90x40-cerna.html" },
+  { id: 10, name: "Regál 180×120×50 cm profesionálny", price: 1249, priceOrig: 4996, height: 180, width: 120, depth: 50, color: "Profesionální", image: "https://vyprodej-regalucz.s26.cdn-upgates.com/_cache/b/1/b17ce5b491bdb73a0df3160b51fbcf7e-1-regal-1800x1200x500-mm-lakovany-5-policovy-nosnosť-1050-kg-modro-oranzovy-pravy-18120501050orangeblue1.jpeg", url: "regal-180x120x50-profesionalni.html" }
+];
+
+function setSearch(term) {
+  document.getElementById('searchInput').value = term;
+  handleSearch({ target: { value: term } });
+}
+
+function handleSearch(event) {
+  const query = event.target.value.toLowerCase();
+
+  if (query.length < 1) {
+    showSearchDropdown();
+    renderDefaultSearch();
+    return;
+  }
+
+  showSearchDropdown();
+
+  const results = searchProducts.filter(p =>
+    p.name.toLowerCase().includes(query) ||
+    p.color.toLowerCase().includes(query) ||
+    String(p.height).includes(query) ||
+    String(p.width).includes(query)
+  ).slice(0, 6);
+
+  // Top product
+  const topProduct = results.find(p => p.bestseller) || results[0];
+  if (topProduct) {
+    document.getElementById('searchTopProduct').innerHTML = `
+      <a href="${topProduct.url}" class="block">
+        <img src="${topProduct.image}" loading="lazy" alt="${topProduct.name}" class="w-full aspect-square object-contain bg-white rounded-lg mb-2">
+        <h4 class="font-medium text-sm line-clamp-2 mb-1">${topProduct.name}</h4>
+        <div class="text-green-600 text-xs mb-1">Skladom</div>
+        <div class="mb-2">
+          <span class="text-lg font-bold">${topProduct.price} €</span>
+          <span class="text-xs text-gray-400 line-through ml-1">${topProduct.priceOrig} €</span>
+        </div>
+      </a>
+    `;
+  }
+
+  // Products grid
+  document.getElementById('searchProducts').innerHTML = results.map(p => `
+    <a href="${p.url}" class="flex gap-2 p-2 hover:bg-gray-50 rounded-lg group">
+      <img src="${p.image}" loading="lazy" alt="${p.name}" class="w-14 h-14 object-contain bg-gray-100 rounded">
+      <div class="flex-1 min-w-0">
+        <div class="text-xs font-medium line-clamp-2 group-hover:text-primary-500">${p.name}</div>
+        <div class="text-xs text-green-600">Skladom</div>
+        <span class="text-sm font-bold">${p.price} €</span>
+      </div>
+    </a>
+  `).join('') || '<p class="text-sm text-gray-400 col-span-2">Žádné produkty</p>';
+
+  document.getElementById('searchShowAll').href = `katalog.html?hľadať=${encodeURIComponent(query)}`;
+}
+
+function renderDefaultSearch() {
+  const defaultProducts = searchProducts.slice(0, 6);
+  const topProduct = searchProducts.find(p => p.bestseller) || searchProducts[0];
+
+  document.getElementById('searchTopProduct').innerHTML = `
+    <a href="${topProduct.url}" class="block">
+      <img src="${topProduct.image}" loading="lazy" alt="${topProduct.name}" class="w-full aspect-square object-contain bg-white rounded-lg mb-2">
+      <h4 class="font-medium text-sm line-clamp-2 mb-1">${topProduct.name}</h4>
+      <div class="text-green-600 text-xs mb-1">Skladom</div>
+      <div class="mb-2">
+        <span class="text-lg font-bold">${topProduct.price} €</span>
+        <span class="text-xs text-gray-400 line-through ml-1">${topProduct.priceOrig} €</span>
+      </div>
+    </a>
+  `;
+
+  document.getElementById('searchProducts').innerHTML = defaultProducts.map(p => `
+    <a href="${p.url}" class="flex gap-2 p-2 hover:bg-gray-50 rounded-lg group">
+      <img src="${p.image}" loading="lazy" alt="${p.name}" class="w-14 h-14 object-contain bg-gray-100 rounded">
+      <div class="flex-1 min-w-0">
+        <div class="text-xs font-medium line-clamp-2 group-hover:text-primary-500">${p.name}</div>
+        <div class="text-xs text-green-600">Skladom</div>
+        <span class="text-sm font-bold">${p.price} €</span>
+      </div>
+    </a>
+  `).join('');
+}
+
+function showSearchDropdown() {
+  document.getElementById('searchDropdown').classList.remove('hidden');
+}
+
+function performSearch() {
+  const query = document.getElementById('searchInput').value.trim();
+  if (query) {
+    window.location.href = `katalog.html?hľadať=${encodeURIComponent(query)}`;
+  }
+}
+
+// Close search dropdown when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('#searchInput') && !e.target.closest('#searchDropdown')) {
+    document.getElementById('searchDropdown').classList.add('hidden');
+  }
 });
 </script>
+
+<!-- AI CHAT WIDGET -->
+<div id="chatWidget" class="fixed bottom-6 right-4 z-40">
+  <button onclick="toggleChat()" id="chatButton" class="bg-primary-500 hover:bg-primary-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-2xl transition-transform hover:scale-110">
+    💬
+  </button>
+
+  <div id="chatWindow" class="hidden absolute bottom-16 right-0 w-80 sm:w-96 bg-white rounded-2xl shadow-2xl overflow-hidden">
+    <div class="bg-gradient-to-r from-primary-500 to-orange-500 text-white p-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">🤖</div>
+          <div>
+            <div class="font-bold">RegálBot</div>
+            <div class="text-xs text-white/80 flex items-center gap-1">
+              <span class="w-2 h-2 bg-green-400 rounded-full"></span> Online
+            </div>
+          </div>
+        </div>
+        <button onclick="toggleChat()" class="text-white/80 hover:text-white text-xl">✕</button>
+      </div>
+    </div>
+
+    <div id="chatMessages" class="h-80 overflow-y-auto p-4 space-y-4">
+      <div class="flex gap-3">
+        <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">🤖</div>
+        <div class="bg-gray-100 rounded-2xl rounded-tl-none p-3 text-sm max-w-[80%]">
+          Ahoj! 👋 Som RegálBot a pomôžem vám vybrať ideálny regál. Na čo sa chcete opýtať?
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t p-4">
+      <div class="flex gap-2">
+        <input type="text" id="chatInput" placeholder="Napíšte správu..." class="flex-1 border rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary-500" onkeypress="if(event.key==='Enter')sendMessage()">
+        <button onclick="sendMessage()" class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-lg transition">➤</button>
+      </div>
+      <div class="flex flex-wrap gap-1 mt-2">
+        <button onclick="quickQuestion('Jaký regál do garáže?')" class="text-xs bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded-full">🚗 Do garáže</button>
+        <button onclick="quickQuestion('Regál do vlhka?')" class="text-xs bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded-full">💧 Do vlhka</button>
+        <button onclick="quickQuestion('Najlacnejší regál?')" class="text-xs bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded-full">💰 Najlacnejší</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="chatbot.js"></script>
 
 </body>
 </html>

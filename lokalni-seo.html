@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://vyprodej-regalucz.s26.cdn-upgates.com">
+
   <meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="canonical" href="https://www.bazarovyregal.sk/lokalni-seo.html">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Regály s dopravou do vašeho města | Bazarovyregal.sk</title>
   <meta name="description" content="Kovové regály so rychlým doručeniem do celé SR. Doručujeme do Prahy, Brna, Ostravy a dalších 100 měst. Likvidácia skladu - zľavy až 50%.">
@@ -23,6 +32,70 @@
     body { font-family: 'Inter', sans-serif; }
     .city-card:hover { transform: translateY(-2px); }
   </style>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Regály s dopravou do vašeho města",
+  "description": "Kovové regály so rychlým doručeniem do celé SR. Doručujeme do Prahy, Brna, Ostravy a dalších 100 měst. Likvidácia skladu - zľavy až 50%.",
+  "author": {
+    "@type": "Organization",
+    "name": "Bazarovyregal.sk",
+    "url": "https://bazarovyregal.sk"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bazarovyregal.sk",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.bazarovyregal.sk/logo.png"
+    }
+  },
+  "datePublished": "2026-01-15",
+  "dateModified": "2026-01-31",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.bazarovyregal.sk/lokalni-seo.html"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Úvod",
+      "item": "https://www.bazarovyregal.sk/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Články",
+      "item": "https://www.bazarovyregal.sk/clanky/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Regály s dopravou do vašeho města",
+      "item": "https://www.bazarovyregal.sk/lokalni-seo.html"
+    }
+  ]
+}
+  </script>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://vyprodej-regalucz.s26.cdn-upgates.com">
+  <link rel="dns-prefetch" href="https://www.youtube.com">
+  <meta name="theme-color" content="#f97316">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Domů", "item": "https://www.bazarovyregal.sk/index.html"}, {"@type": "ListItem", "position": 2, "name": "Články", "item": "https://www.bazarovyregal.sk/blog.html"}, {"@type": "ListItem", "position": 3, "name": "Článek", "item": "https://www.bazarovyregal.sk/lokalni-seo.html"}]}</script>
 </head>
 <body class="bg-gray-50">
 
@@ -52,10 +125,20 @@
     <nav class="hidden md:flex gap-6 text-sm font-medium text-gray-600">
       <a href="index.html" class="hover:text-primary-500">Úvod</a>
       <a href="#mesta" class="hover:text-primary-500">Města</a>
-      <a href="bazarovyregal-affiliate.html" class="hover:text-primary-500">Affiliate</a>
+      <a href="kontakt.html" class="hover:text-primary-500">Affiliate</a>
     </nav>
   </div>
 </header>
+
+<!-- Breadcrumbs Navigation -->
+<nav aria-label="Breadcrumb" class="bg-gray-100 py-3 px-4">
+  <div class="container mx-auto">
+    <ol class="flex items-center text-sm">
+      <a href="index.html" class="text-primary-500 hover:text-primary-600 hover:underline">Domů</a> <span class="text-gray-400 mx-2">›</span> <a href="blog.html" class="text-primary-500 hover:text-primary-600 hover:underline">Články</a> <span class="text-gray-400 mx-2">›</span> <span class="text-gray-500">Článek</span>
+    </ol>
+  </div>
+</nav>
+
 
 <!-- Hero -->
 <section class="bg-gradient-to-r from-primary-500 to-orange-500 text-white py-16">
@@ -511,6 +594,59 @@
 </section>
 
 <!-- Footer -->
+
+<!-- Related Articles -->
+<section class="mt-12 py-8 bg-gray-50 rounded-2xl">
+  <div class="container mx-auto px-6">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">📚 Související články</h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      
+      <a href="ratanovy-regal.html" class="group block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-all border border-gray-100">
+        <h4 class="font-semibold text-gray-800 group-hover:text-primary-500 transition-colors line-clamp-2">Ratanovy Regal</h4>
+        <span class="text-primary-500 text-sm mt-2 inline-flex items-center">
+          Číst více →
+        </span>
+      </a>
+
+      <a href="plechove-police.html" class="group block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-all border border-gray-100">
+        <h4 class="font-semibold text-gray-800 group-hover:text-primary-500 transition-colors line-clamp-2">Plechove Police</h4>
+        <span class="text-primary-500 text-sm mt-2 inline-flex items-center">
+          Číst více →
+        </span>
+      </a>
+
+      <a href="policovy-system-pruvodce.html" class="group block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-all border border-gray-100">
+        <h4 class="font-semibold text-gray-800 group-hover:text-primary-500 transition-colors line-clamp-2">Policovy System Pruvodce</h4>
+        <span class="text-primary-500 text-sm mt-2 inline-flex items-center">
+          Číst více →
+        </span>
+      </a>
+
+      <a href="rohove-police-pruvodce.html" class="group block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-all border border-gray-100">
+        <h4 class="font-semibold text-gray-800 group-hover:text-primary-500 transition-colors line-clamp-2">Rohove Police Pruvodce</h4>
+        <span class="text-primary-500 text-sm mt-2 inline-flex items-center">
+          Číst více →
+        </span>
+      </a>
+
+      <a href="regaly-na-pneumatiky.html" class="group block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-all border border-gray-100">
+        <h4 class="font-semibold text-gray-800 group-hover:text-primary-500 transition-colors line-clamp-2">Regaly Na Pneumatiky</h4>
+        <span class="text-primary-500 text-sm mt-2 inline-flex items-center">
+          Číst více →
+        </span>
+      </a>
+
+      <a href="kovovy-regal-cerny.html" class="group block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-all border border-gray-100">
+        <h4 class="font-semibold text-gray-800 group-hover:text-primary-500 transition-colors line-clamp-2">Kovovy Regal Cerny</h4>
+        <span class="text-primary-500 text-sm mt-2 inline-flex items-center">
+          Číst více →
+        </span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
 <footer class="bg-gray-900 text-white py-12">
   <div class="container mx-auto px-4">
     <div class="grid md:grid-cols-4 gap-8 mb-8">
@@ -548,8 +684,8 @@
         <h4 class="font-bold text-lg mb-4">Informácie</h4>
         <ul class="space-y-2 text-gray-400 text-sm">
           <li><a href="index.html" class="hover:text-primary-400">Všetky regály</a></li>
-          <li><a href="bazarovyregal-blog.html" class="hover:text-primary-400">Blog</a></li>
-          <li><a href="bazarovyregal-affiliate.html" class="hover:text-primary-400">Affiliate</a></li>
+          <li><a href="index.html" class="hover:text-primary-400">Blog</a></li>
+          <li><a href="kontakt.html" class="hover:text-primary-400">Affiliate</a></li>
         </ul>
       </div>
       <div>
