@@ -13,7 +13,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Všetky regály - 102 produktov skladom | Bazarovyregal.sk</title>
-  <meta name="description" content="Kompletní nabídka kovových regálov. 102 typů skladom, doprava od 3,99 €. Filtre podle barvy, rozměrů, nosnosťi. Likvidácia skladu - zľavy až 50%.">
+  <meta name="description" content="Kompletní nabídka kovových regálov. 102 typů skladom, doprava od 3,99 €. Filtre podle barvy, rozměrů, nosnosti. Likvidácia skladu - zľavy až 50%.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script>
@@ -427,18 +427,18 @@
 <script>
 // ========== PRODUCT DATA (102 produktov) ==========
 const allProducts = [
-  { id: 1, code: "15070304700BLACK1", name: "Regál 150×70×30 cm čierny", price: 599, priceOrig: 1198, height: 150, width: 70, depth: 30, color: "Čierna", surface: "Lakovaný", shelves: 4, capacity: 700, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/v/v6903779a99ff1-1-regal-1500x700x300-mm-lakovany-4-policovy-nosnosť-700-kg-cerny-pravy-15070304700black1.jpeg", seoUrl: "regal-1500x700x300-mm-lakovany-4-policovy-nosnosť-700-kg-cerny", stock: 47, sold7days: 23 },
-  { id: 2, code: "15070304700RED1", name: "Regál 150×70×30 cm červený", price: 599, priceOrig: 1198, height: 150, width: 70, depth: 30, color: "Červená", surface: "Lakovaný", shelves: 4, capacity: 700, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/_cache/9/e/9eef5f9f2ad8880b75926a3eae58485b-1-regal-1500x700x300-mm-lakovany-4-policovy-nosnosť-700-kg-cerveny-pravy-15070304700red1.jpeg", seoUrl: "regal-1500x700x300-mm-lakovany-4-policovy-nosnosť-700-kg-cerveny", stock: 31, sold7days: 12 },
-  { id: 3, code: "15070304700WHITE1", name: "Regál 150×70×30 cm biely", price: 599, priceOrig: 1198, height: 150, width: 70, depth: 30, color: "Biela", surface: "Lakovaný", shelves: 4, capacity: 700, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/6/6690a777ad6edc-1-18090405875white1.jpeg", seoUrl: "regal-1500x700x300-mm-lakovany-4-policovy-nosnosť-700-kg-bily", stock: 28, sold7days: 15 },
-  { id: 4, code: "18090405875BLACK1", name: "Regál 180×90×40 cm čierny", price: 739, priceOrig: 1478, height: 180, width: 90, depth: 40, color: "Čierna", surface: "Lakovaný", shelves: 5, capacity: 875, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/l/l690377af7480a-1-regal-1800x900x400-mm-lakovany-5-policovy-nosnosť-875-kg-cerny-pravy-18090405875black1.jpeg", seoUrl: "regal-1800x900x400-mm-lakovany-5-policovy-nosnosť-875-kg-cerny", stock: 156, sold7days: 89, bestseller: true },
-  { id: 5, code: "18090405875WHITE1", name: "Regál 180×90×40 cm biely", price: 739, priceOrig: 1478, height: 180, width: 90, depth: 40, color: "Biela", surface: "Lakovaný", shelves: 5, capacity: 875, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/6/6690a777ad6edc-1-18090405875white1.jpeg", seoUrl: "regal-1800x900x400-mm-lakovany-5-policovy-nosnosť-875-kg-bily", stock: 98, sold7days: 67 },
-  { id: 6, code: "18090405875ZINK", name: "Regál 180×90×40 cm zinkovaný", price: 649, priceOrig: 1298, height: 180, width: 90, depth: 40, color: "Zinkovaný", surface: "Pozinkovaný", shelves: 5, capacity: 875, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/_cache/z/z/z6914605330838-5-pol-pravy-zink.jpg", seoUrl: "regal-1800x900x400-mm-zinkovany-5-policovy-nosnosť-875-kg", stock: 203, sold7days: 78 },
-  { id: 7, code: "18060405875BLACK1", name: "Regál 180×60×40 cm čierny", price: 689, priceOrig: 1378, height: 180, width: 60, depth: 40, color: "Čierna", surface: "Lakovaný", shelves: 5, capacity: 875, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/j/j690377a5dc94d-1-regal-1800x600x400-mm-lakovany-5-policovy-nosnosť-875-kg-cerny-pravy-18060405875black1.jpeg", seoUrl: "regal-1800x600x400-mm-lakovany-5-policovy-nosnosť-875-kg-cerny", stock: 67, sold7days: 34 },
-  { id: 8, code: "18040405875BLACK1", name: "Regál 180×40×40 cm čierny", price: 629, priceOrig: 1258, height: 180, width: 40, depth: 40, color: "Čierna", surface: "Lakovaný", shelves: 5, capacity: 875, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/2/2690377a330269-1-regal-1800x400x400-mm-lakovany-5-policovy-nosnosť-875-kg-cerny-pravy-18040405875black1.jpeg", seoUrl: "regal-1800x400x400-mm-lakovany-5-policovy-nosnosť-875-kg-cerny", stock: 45, sold7days: 21 },
-  { id: 9, code: "20090405875BLACK1", name: "Regál 200×90×40 cm čierny", price: 849, priceOrig: 1698, height: 200, width: 90, depth: 40, color: "Čierna", surface: "Lakovaný", shelves: 5, capacity: 875, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/l/l690377af7480a-1-regal-1800x900x400-mm-lakovany-5-policovy-nosnosť-875-kg-cerny-pravy-18090405875black1.jpeg", seoUrl: "regal-2000x900x400-mm-lakovany-5-policovy-nosnosť-875-kg-cerny", stock: 34, sold7days: 19 },
-  { id: 10, code: "22090455875BLACK1", name: "Regál 220×90×45 cm čierny", price: 899, priceOrig: 1798, height: 220, width: 90, depth: 45, color: "Čierna", surface: "Lakovaný", shelves: 5, capacity: 875, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/l/l690377af7480a-1-regal-1800x900x400-mm-lakovany-5-policovy-nosnosť-875-kg-cerny-pravy-18090405875black1.jpeg", seoUrl: "regal-2200x900x450-mm-lakovany-5-policovy-nosnosť-875-kg-cerny", stock: 23, sold7days: 11 },
-  { id: 11, code: "18012005875BLACK1", name: "Regál 180×120×50 cm čierny", price: 1149, priceOrig: 2298, height: 180, width: 120, depth: 50, color: "Čierna", surface: "Lakovaný", shelves: 5, capacity: 875, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/l/l690377af7480a-1-regal-1800x900x400-mm-lakovany-5-policovy-nosnosť-875-kg-cerny-pravy-18090405875black1.jpeg", seoUrl: "regal-1800x1200x500-mm-lakovany-5-policovy-nosnosť-875-kg-cerny", stock: 19, sold7days: 8 },
-  { id: 12, code: "18090405875BLUE1", name: "Regál 180×90×40 cm modrý", price: 759, priceOrig: 1518, height: 180, width: 90, depth: 40, color: "Modrá", surface: "Lakovaný", shelves: 5, capacity: 875, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/_cache/1/c/1c64831c1231f5847cf9e7a36f6cdf6f-1-15070304700blue1.jpeg", seoUrl: "regal-1800x900x400-mm-lakovany-5-policovy-nosnosť-875-kg-modry", stock: 15, sold7days: 7 },
+  { id: 1, code: "15070304700BLACK1", name: "Regál 150×70×30 cm čierny", price: 599, priceOrig: 1198, height: 150, width: 70, depth: 30, color: "Čierna", surface: "Lakovaný", shelves: 4, capacity: 700, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/v/v6903779a99ff1-1-regal-1500x700x300-mm-lakovany-4-policovy-nosnost-700-kg-cerny-pravy-15070304700black1.jpeg", seoUrl: "regal-1500x700x300-mm-lakovany-4-policovy-nosnost-700-kg-cerny", stock: 47, sold7days: 23 },
+  { id: 2, code: "15070304700RED1", name: "Regál 150×70×30 cm červený", price: 599, priceOrig: 1198, height: 150, width: 70, depth: 30, color: "Červená", surface: "Lakovaný", shelves: 4, capacity: 700, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/_cache/9/e/9eef5f9f2ad8880b75926a3eae58485b-1-regal-1500x700x300-mm-lakovany-4-policovy-nosnost-700-kg-cerveny-pravy-15070304700red1.jpeg", seoUrl: "regal-1500x700x300-mm-lakovany-4-policovy-nosnost-700-kg-cerveny", stock: 31, sold7days: 12 },
+  { id: 3, code: "15070304700WHITE1", name: "Regál 150×70×30 cm biely", price: 599, priceOrig: 1198, height: 150, width: 70, depth: 30, color: "Biela", surface: "Lakovaný", shelves: 4, capacity: 700, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/6/6690a777ad6edc-1-18090405875white1.jpeg", seoUrl: "regal-1500x700x300-mm-lakovany-4-policovy-nosnost-700-kg-bily", stock: 28, sold7days: 15 },
+  { id: 4, code: "18090405875BLACK1", name: "Regál 180×90×40 cm čierny", price: 739, priceOrig: 1478, height: 180, width: 90, depth: 40, color: "Čierna", surface: "Lakovaný", shelves: 5, capacity: 875, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/l/l690377af7480a-1-regal-1800x900x400-mm-lakovany-5-policovy-nosnost-875-kg-cerny-pravy-18090405875black1.jpeg", seoUrl: "regal-1800x900x400-mm-lakovany-5-policovy-nosnost-875-kg-cerny", stock: 156, sold7days: 89, bestseller: true },
+  { id: 5, code: "18090405875WHITE1", name: "Regál 180×90×40 cm biely", price: 739, priceOrig: 1478, height: 180, width: 90, depth: 40, color: "Biela", surface: "Lakovaný", shelves: 5, capacity: 875, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/6/6690a777ad6edc-1-18090405875white1.jpeg", seoUrl: "regal-1800x900x400-mm-lakovany-5-policovy-nosnost-875-kg-bily", stock: 98, sold7days: 67 },
+  { id: 6, code: "18090405875ZINK", name: "Regál 180×90×40 cm zinkovaný", price: 649, priceOrig: 1298, height: 180, width: 90, depth: 40, color: "Zinkovaný", surface: "Pozinkovaný", shelves: 5, capacity: 875, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/_cache/z/z/z6914605330838-5-pol-pravy-zink.jpg", seoUrl: "regal-1800x900x400-mm-pozinkovany-5-policovy-nosnost-875-kg", stock: 203, sold7days: 78 },
+  { id: 7, code: "18060405875BLACK1", name: "Regál 180×60×40 cm čierny", price: 689, priceOrig: 1378, height: 180, width: 60, depth: 40, color: "Čierna", surface: "Lakovaný", shelves: 5, capacity: 875, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/j/j690377a5dc94d-1-regal-1800x600x400-mm-lakovany-5-policovy-nosnost-875-kg-cerny-pravy-18060405875black1.jpeg", seoUrl: "regal-1800x600x400-mm-lakovany-5-policovy-nosnost-875-kg-cerny", stock: 67, sold7days: 34 },
+  { id: 8, code: "18040405875BLACK1", name: "Regál 180×40×40 cm čierny", price: 629, priceOrig: 1258, height: 180, width: 40, depth: 40, color: "Čierna", surface: "Lakovaný", shelves: 5, capacity: 875, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/2/2690377a330269-1-regal-1800x400x400-mm-lakovany-5-policovy-nosnost-875-kg-cerny-pravy-18040405875black1.jpeg", seoUrl: "regal-1800x400x400-mm-lakovany-5-policovy-nosnost-875-kg-cerny", stock: 45, sold7days: 21 },
+  { id: 9, code: "20090405875BLACK1", name: "Regál 200×90×40 cm čierny", price: 849, priceOrig: 1698, height: 200, width: 90, depth: 40, color: "Čierna", surface: "Lakovaný", shelves: 5, capacity: 875, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/l/l690377af7480a-1-regal-1800x900x400-mm-lakovany-5-policovy-nosnost-875-kg-cerny-pravy-18090405875black1.jpeg", seoUrl: "regal-2000x900x400-mm-lakovany-5-policovy-nosnost-875-kg-cerny", stock: 34, sold7days: 19 },
+  { id: 10, code: "22090455875BLACK1", name: "Regál 220×90×45 cm čierny", price: 899, priceOrig: 1798, height: 220, width: 90, depth: 45, color: "Čierna", surface: "Lakovaný", shelves: 5, capacity: 875, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/l/l690377af7480a-1-regal-1800x900x400-mm-lakovany-5-policovy-nosnost-875-kg-cerny-pravy-18090405875black1.jpeg", seoUrl: "regal-2200x900x450-mm-lakovany-5-policovy-nosnost-875-kg-cerny", stock: 23, sold7days: 11 },
+  { id: 11, code: "18012005875BLACK1", name: "Regál 180×120×50 cm čierny", price: 1149, priceOrig: 2298, height: 180, width: 120, depth: 50, color: "Čierna", surface: "Lakovaný", shelves: 5, capacity: 875, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/l/l690377af7480a-1-regal-1800x900x400-mm-lakovany-5-policovy-nosnost-875-kg-cerny-pravy-18090405875black1.jpeg", seoUrl: "regal-1800x1200x500-mm-lakovany-5-policovy-nosnost-875-kg-cerny", stock: 19, sold7days: 8 },
+  { id: 12, code: "18090405875BLUE1", name: "Regál 180×90×40 cm modrý", price: 759, priceOrig: 1518, height: 180, width: 90, depth: 40, color: "Modrá", surface: "Lakovaný", shelves: 5, capacity: 875, image: "https://vyprodej-regalucz.s26.cdn-upgates.com/_cache/1/c/1c64831c1231f5847cf9e7a36f6cdf6f-1-15070304700blue1.jpeg", seoUrl: "regal-1800x900x400-mm-lakovany-5-policovy-nosnost-875-kg-modry", stock: 15, sold7days: 7 },
 ];
 
 // Fix prices: double original prices and recalculate discounts
@@ -458,9 +458,9 @@ const depths = [30, 40, 45, 50];
 
 // Obrázky podle barvy - OPRAVENÉ URL
 const colorImages = {
-  "Čierna": "https://vyprodej-regalucz.s26.cdn-upgates.com/l/l690377af7480a-1-regal-1800x900x400-mm-lakovany-5-policovy-nosnosť-875-kg-cerny-pravy-18090405875black1.jpeg",
+  "Čierna": "https://vyprodej-regalucz.s26.cdn-upgates.com/l/l690377af7480a-1-regal-1800x900x400-mm-lakovany-5-policovy-nosnost-875-kg-cerny-pravy-18090405875black1.jpeg",
   "Biela": "https://vyprodej-regalucz.s26.cdn-upgates.com/6/6690a777ad6edc-1-18090405875white1.jpeg",
-  "Červená": "https://vyprodej-regalucz.s26.cdn-upgates.com/_cache/9/e/9eef5f9f2ad8880b75926a3eae58485b-1-regal-1500x700x300-mm-lakovany-4-policovy-nosnosť-700-kg-cerveny-pravy-15070304700red1.jpeg",
+  "Červená": "https://vyprodej-regalucz.s26.cdn-upgates.com/_cache/9/e/9eef5f9f2ad8880b75926a3eae58485b-1-regal-1500x700x300-mm-lakovany-4-policovy-nosnost-700-kg-cerveny-pravy-15070304700red1.jpeg",
   "Modrá": "https://vyprodej-regalucz.s26.cdn-upgates.com/_cache/1/c/1c64831c1231f5847cf9e7a36f6cdf6f-1-15070304700blue1.jpeg",
   "Zinkovaný": "https://vyprodej-regalucz.s26.cdn-upgates.com/z/z6914605330838-5-pol-pravy-zink.jpg"
 };
@@ -474,13 +474,13 @@ function generateSeoUrl(height, width, depth, color, shelves, capacity) {
     "Modrá": "modry",
     "Zinkovaný": ""
   };
-  const surfaceText = color === "Zinkovaný" ? "zinkovany" : "lakovany";
+  const surfaceText = color === "Zinkovaný" ? "pozinkovany" : "lakovany";
   const colorSeo = colorSeoMap[color] || "";
 
   if (color === "Zinkovaný") {
-    return `regal-${height*10}x${width*10}x${depth*10}-mm-${surfaceText}-${shelves}-policovy-nosnosť-${capacity}-kg`;
+    return `regal-${height*10}x${width*10}x${depth*10}-mm-${surfaceText}-${shelves}-policovy-nosnost-${capacity}-kg`;
   } else {
-    return `regal-${height*10}x${width*10}x${depth*10}-mm-${surfaceText}-${shelves}-policovy-nosnosť-${capacity}-kg-${colorSeo}`;
+    return `regal-${height*10}x${width*10}x${depth*10}-mm-${surfaceText}-${shelves}-policovy-nosnost-${capacity}-kg-${colorSeo}`;
   }
 }
 
@@ -532,7 +532,7 @@ function getProductUrl(p) {
     'Biela': 'bila',
     'Červená': 'cervena',
     'Modrá': 'modra',
-    'Zinkovaný': 'zinkovany'
+    'Zinkovaný': 'pozinkovany'
   };
   const colorSlug = colorMap[p.color] || p.color.toLowerCase().replace(/[áéíóúýčďěňřšťžů]/g, c =>
     ({á:'a',é:'e',í:'i',ó:'o',ú:'u',ý:'y',č:'c',ď:'d',ě:'e',ň:'n',ř:'r',š:'s',ť:'t',ž:'z',ů:'u'})[c] || c
@@ -1108,7 +1108,7 @@ function findMatchingProduct() {
       'bílá': 'Biela', 'biely': 'Biela', 'bila': 'Biela', 'bily': 'Biela', 'white': 'Biela',
       'červená': 'Červená', 'červený': 'Červená', 'cervena': 'Červená', 'cerveny': 'Červená', 'red': 'Červená',
       'modrá': 'Modrá', 'modrý': 'Modrá', 'modra': 'Modrá', 'modry': 'Modrá', 'blue': 'Modrá',
-      'zinkovaný': 'Zinkovaný', 'zinkovany': 'Zinkovaný', 'zink': 'Zinkovaný', 'pozink': 'Zinkovaný'
+      'zinkovaný': 'Zinkovaný', 'pozinkovany': 'Zinkovaný', 'zink': 'Zinkovaný', 'pozink': 'Zinkovaný'
     };
     const normalizedColor = colorMap[chatContext.color.toLowerCase()] || chatContext.color;
 
@@ -1193,20 +1193,20 @@ function generateAIResponse(message) {
   // Usage-based recommendations with specific products
   if (msg.includes('garáž') || msg.includes('garaz')) {
     chatContext.usage = 'garáž';
-    return `Pre garáž odporúčam <a href="regal-180x90x40-cerna.html" class="text-primary-500 underline">čierny regál 180×90×40 cm</a> - nosnosť 875 kg, cena 29,49 €. 🚗<br><br>Alebo preferujete zinkovaný (odolnější vlhkosti)?<br><br>Jaké máte prostorové možnosti? (výška×šířka×hloubka)`;
+    return `Pre garáž odporúčam <a href="regal-180x90x40-cerna.html" class="text-primary-500 underline">čierny regál 180×90×40 cm</a> - nosnost 875 kg, cena 29,49 €. 🚗<br><br>Alebo preferujete zinkovaný (odolnější vlhkosti)?<br><br>Jaké máte prostorové možnosti? (výška×šířka×hloubka)`;
   }
 
   if (msg.includes('vlhk') || msg.includes('sklep')) {
     chatContext.usage = 'sklep';
-    return `Do vlhka jednoznačně <a href="regal-180x90x40-zinkovany.html" class="text-primary-500 underline">zinkovaný regál</a> - odolný korozi! 💧<br><br>Jaké rozměry potřebujete? Najpredávanejšie je 180×90×40 cm za 25,99 €.`;
+    return `Do vlhka jednoznačně <a href="regal-180x90x40-pozinkovany.html" class="text-primary-500 underline">zinkovaný regál</a> - odolný korozi! 💧<br><br>Jaké rozměry potřebujete? Najpredávanejšie je 180×90×40 cm za 25,99 €.`;
   }
 
   if (msg.includes('levn') || msg.includes('nejlacnejšie')) {
     return `Najlacnejší regál: <a href="regal-150x70x30-cerna.html" class="text-primary-500 underline">150×70×30 cm čierny</a> za 53,99 €! 💰<br><br>Kolik kusů byste potřebovali?`;
   }
 
-  if (msg.includes('nosnosť') || msg.includes('těžk')) {
-    return 'Všechny naše regály mají nosnosť 175 kg/polici, celkem až 875 kg! 💪<br><br>Pro nejtěžší věci doporučuji <a href="regal-180x120x50-profesionalni.html" class="text-primary-500 underline">profesionálny řadu</a> s nosnosťí 1050 kg.';
+  if (msg.includes('nosnost') || msg.includes('těžk')) {
+    return 'Všechny naše regály mají nosnost 175 kg/polici, celkem až 875 kg! 💪<br><br>Pro nejtěžší věci doporučuji <a href="regal-180x120x50-profesionalni.html" class="text-primary-500 underline">profesionálny řadu</a> s nosností 1050 kg.';
   }
 
   if (msg.includes('doručenie') || msg.includes('doprava')) {
